@@ -33,7 +33,7 @@
     <a class="brand" href="#top"><img src="profile.png" alt="">Budget Bite Club</a>
     <nav class="nav" aria-label="Main">
       <a href="#week">The Week</a>
-      <a href="#recipe">Latest Recipe</a>
+      <a href="recipes.html">Recipe Feed</a>
       <a href="#why">Why Join</a>
       <a href="#follow">Follow</a>
     </nav>
@@ -111,8 +111,29 @@
         <span class="chip">⏱️ About 20 minutes</span>
         <span class="chip">🍝 Pasta Under $5 week</span>
       </div>
+      <div style="text-align:center;margin-top:26px">
+        <a class="btn btn-green" href="recipes.html">Scroll the full Recipe Feed &rarr;</a>
+      </div>
     </div>
   </section>
+  <script>
+  // Replace the static spotlight with the newest recipes from the feed, once there are some.
+  fetch("recipes.json", { cache: "no-cache" }).then(r => r.json()).then(feed => {
+    if (!feed.length) return;
+    const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+    const sec = document.getElementById("recipe");
+    sec.querySelector(".section-head p").innerHTML =
+      `Latest: <strong>${esc(feed[0].dish)}</strong>${feed[0].cost ? " for " + esc(feed[0].cost) : ""}. Tap any recipe to see the photos, ingredients and steps.`;
+    sec.querySelector(".gallery").innerHTML = feed.slice(0, 6).map(r => `
+      <a href="recipes.html#${esc(r.id)}" style="position:relative;display:block;text-decoration:none">
+        <img src="${esc(r.images[0])}" alt="${esc(r.dish)}" loading="lazy">
+        <span style="position:absolute;left:8px;right:8px;bottom:8px;background:rgba(0,0,0,.62);color:#fff;border-radius:10px;padding:6px 10px;font:700 .85rem Inter,sans-serif">
+          ${esc(r.dish)}${r.cost ? " &middot; " + esc(r.cost) : ""}</span>
+      </a>`).join("");
+    const chips = sec.querySelector(".recipe-meta");
+    if (chips) chips.innerHTML = `<span class="chip">🍳 ${feed.length} recipe${feed.length > 1 ? "s" : ""} and counting</span>`;
+  }).catch(() => {});
+  </script>
 
   <!-- WHY -->
   <section id="why">
@@ -167,6 +188,7 @@
   <div class="wrap">
     <div>&copy; 2026 Budget Bite Club. Videos use AI-generated visuals and narration and are labeled as such.</div>
     <div class="links">
+      <a href="recipes.html">Recipe Feed</a>
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html">Terms of Service</a>
       <a href="mailto:clipped1919@gmail.com">Contact</a>

@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recipe Feed | Budget Bite Club</title>
+<meta name="description" content="Scroll every Budget Bite Club recipe: restaurant-style food for $5 or less, with real prices, ingredients and steps.">
+<meta property="og:title" content="The Budget Bite Club Recipe Feed">
+<meta property="og:description" content="Every recipe, $5 or less. Scroll, save and cook.">
+<meta property="og:image" content="https://budgetbiteclub-boop.github.io/img/share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .feed-top { padding: 28px 0 8px; text-align: center; }
+  .feed-top h1 { color: var(--green-dark); font-size: clamp(1.9rem, 5vw, 2.6rem); margin-bottom: 4px; }
+  .feed-top p { color: var(--muted); margin: 0 0 18px; }
+  .tools { position: sticky; top: 61px; z-index: 5; background: rgba(255,250,240,.95); backdrop-filter: blur(8px); padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .tools .wrap { max-width: 560px; }
+  .search { width: 100%; padding: 12px 16px; border-radius: 999px; border: 1px solid var(--line); font: inherit; background: #fff; }
+  .filters { display: flex; gap: 8px; overflow-x: auto; padding-top: 10px; scrollbar-width: none; }
+  .filters::-webkit-scrollbar { display: none; }
+  .filter { flex: none; border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 7px 14px; font: 600 .88rem "Inter", sans-serif; cursor: pointer; color: var(--ink); }
+  .filter.on { background: var(--green-dark); border-color: var(--green-dark); color: #fff; }
+
+  .feed { width: min(560px, 100% - 24px); margin: 18px auto 60px; display: flex; flex-direction: column; gap: 22px; }
+  .post { background: #fff; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; box-shadow: 0 6px 22px rgba(20,83,45,.07); scroll-margin-top: 140px; }
+  .post-head { display: flex; align-items: center; gap: 10px; padding: 12px 14px; }
+  .post-head img { width: 38px; height: 38px; border-radius: 50%; }
+  .post-head .who { line-height: 1.2; }
+  .post-head b { font-size: .95rem; }
+  .post-head small { color: var(--muted); display: block; font-size: .8rem; }
+  .post-head .fmt { margin-left: auto; background: var(--green-soft); color: var(--green-dark); font: 700 .75rem "Inter", sans-serif; padding: 5px 10px; border-radius: 999px; white-space: nowrap; }
+
+  .carousel { position: relative; }
+  .slides { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; aspect-ratio: 4 / 5; background: #111; }
+  .slides::-webkit-scrollbar { display: none; }
+  .slides img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; scroll-snap-align: center; }
+  .dots { position: absolute; bottom: 10px; left: 0; right: 0; display: flex; justify-content: center; gap: 6px; pointer-events: none; }
+  .dots i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.55); }
+  .dots i.on { background: #fff; }
+  .badge { position: absolute; top: 12px; left: 12px; background: var(--green); color: #fff; font: 800 1.05rem "Poppins", sans-serif; padding: 6px 12px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,.25); }
+  .nav-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border-radius: 50%; border: 0; background: rgba(255,255,255,.85); font-size: 1.1rem; cursor: pointer; display: grid; place-items: center; }
+  .nav-btn.prev { left: 8px; } .nav-btn.next { right: 8px; }
+  @media (hover: none) { .nav-btn { display: none; } }
+
+  .actions { display: flex; align-items: center; gap: 4px; padding: 8px 8px 0; }
+  .act { border: 0; background: none; cursor: pointer; padding: 8px; border-radius: 10px; font-size: 1.45rem; line-height: 1; }
+  .act:hover { background: #f3f4f6; }
+  .act.liked { color: #e11d48; }
+  .act-yt { margin-left: auto; font: 700 .85rem "Inter", sans-serif; color: #fff; background: var(--yt); padding: 8px 12px; border-radius: 999px; text-decoration: none; }
+  .post-body { padding: 4px 16px 16px; }
+  .post-body h2 { font-size: 1.25rem; color: var(--green-dark); margin: 4px 0 8px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+  .meta span { background: #f3f4f6; border-radius: 999px; padding: 4px 10px; font-size: .82rem; font-weight: 600; }
+  .caption { white-space: pre-line; margin: 0 0 8px; }
+  .tags { color: #2563eb; font-size: .9rem; margin: 0 0 10px; word-spacing: 4px; }
+  details { border-top: 1px solid var(--line); padding: 10px 0 0; margin-top: 10px; }
+  summary { cursor: pointer; font-weight: 700; color: var(--green-dark); }
+  details ul, details ol { margin: 8px 0 4px; padding-left: 22px; }
+  details li { margin: 4px 0; }
+  .empty, .loading { text-align: center; color: var(--muted); padding: 40px 0; }
+  .toast { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%); background: #111; color: #fff; padding: 10px 16px; border-radius: 999px; font-size: .9rem; opacity: 0; transition: opacity .2s; pointer-events: none; }
+  .toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="profile.png" alt="">Budget Bite Club</a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="recipes.html">Recipe Feed</a>
+      <a href="index.html#follow">Follow</a>
+    </nav>
+    <a class="btn btn-green" href="index.html#follow" style="padding:9px 16px;font-size:.92rem">Join the Club</a>
+  </div>
+</header>
+
+<div class="feed-top">
+  <div class="wrap">
+    <h1>The Recipe Feed</h1>
+    <p>Every Budget Bite Club recipe, $5 or less. New ones added every week.</p>
+  </div>
+</div>
+<div class="tools">
+  <div class="wrap">
+    <input class="search" type="search" placeholder="Search recipes, ingredients..." aria-label="Search recipes">
+    <div class="filters" role="group" aria-label="Filter by format"></div>
+  </div>
+</div>
+
+<main class="feed" aria-live="polite"><div class="loading">Loading recipes...</div></main>
+<div class="toast" role="status"></div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; 2026 Budget Bite Club. Videos use AI-generated visuals and narration and are labeled as such.</div>
+    <div class="links"><a href="index.html">Home</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const feedEl = document.querySelector(".feed");
+  const searchEl = document.querySelector(".search");
+  const filtersEl = document.querySelector(".filters");
+  const toastEl = document.querySelector(".toast");
+  const PAGE = 6;
+  let all = [], shown = [], rendered = 0, fmt = "All", observer = null;
+
+  const store = {
+    get(k) { try { return JSON.parse(localStorage.getItem(k) || "[]"); } catch (e) { return []; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  };
+  const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const niceDate = d => new Date(d + "T12:00:00").toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+  const toast = msg => { toastEl.textContent = msg; toastEl.classList.add("show"); setTimeout(() => toastEl.classList.remove("show"), 1600); };
+
+  function postHTML(r) {
+    const liked = store.get("bbc-likes").includes(r.id);
+    const meta = [r.cost && `💸 ${esc(r.cost)}`, r.minutes && `⏱️ ${esc(r.minutes)} min`,
+                  r.servings && `🍽️ Serves ${esc(r.servings)}`, r.theme && `📅 ${esc(r.theme)}`].filter(Boolean);
+    return `
+    <article class="post" id="${esc(r.id)}">
+      <div class="post-head">
+        <img src="profile.png" alt="">
+        <div class="who"><b>budgetbiteclub</b><small>${niceDate(r.date)}</small></div>
+        ${r.format ? `<span class="fmt">${esc(r.format)}</span>` : ""}
+      </div>
+      <div class="carousel">
+        <div class="slides">${r.images.map((src, i) =>
+          `<img src="${esc(src)}" alt="${esc(r.dish)} photo ${i + 1}" loading="lazy">`).join("")}</div>
+        ${r.cost ? `<div class="badge">${esc(r.cost)}</div>` : ""}
+        ${r.images.length > 1 ? `<button class="nav-btn prev" aria-label="Previous photo">&#8249;</button>
+          <button class="nav-btn next" aria-label="Next photo">&#8250;</button>
+          <div class="dots">${r.images.map((_, i) => `<i class="${i ? "" : "on"}"></i>`).join("")}</div>` : ""}
+      </div>
+      <div class="actions">
+        <button class="act like ${liked ? "liked" : ""}" aria-label="Like" aria-pressed="${liked}">${liked ? "♥" : "♡"}</button>
+        <button class="act share" aria-label="Share">↗</button>
+        ${r.youtube ? `<a class="act-yt" href="${esc(r.youtube)}" target="_blank" rel="noopener">▶ Watch the video</a>` : ""}
+      </div>
+      <div class="post-body">
+        <h2>${esc(r.dish)}</h2>
+        ${meta.length ? `<div class="meta">${meta.map(m => `<span>${m}</span>`).join("")}</div>` : ""}
+        ${r.caption ? `<p class="caption">${esc(r.caption)}</p>` : ""}
+        ${r.hashtags && r.hashtags.length ? `<p class="tags">${r.hashtags.map(h => "#" + esc(h)).join(" ")}</p>` : ""}
+        ${r.ingredients && r.ingredients.length ? `<details><summary>Ingredients (${r.ingredients.length})</summary>
+          <ul>${r.ingredients.map(i => `<li>${esc(i)}</li>`).join("")}</ul></details>` : ""}
+        ${r.steps && r.steps.length ? `<details><summary>How to make it</summary>
+          <ol>${r.steps.map(s => `<li>${esc(s)}</li>`).join("")}</ol></details>` : ""}
+      </div>
+    </article>`;
+  }
+
+  function wire(post, r) {
+    const slides = post.querySelector(".slides");
+    const dots = post.querySelectorAll(".dots i");
+    if (slides && dots.length) {
+      slides.addEventListener("scroll", () => {
+        const i = Math.round(slides.scrollLeft / slides.clientWidth);
+        dots.forEach((d, j) => d.classList.toggle("on", j === i));
+      }, { passive: true });
+      post.querySelector(".prev").onclick = () => slides.scrollBy({ left: -slides.clientWidth, behavior: "smooth" });
+      post.querySelector(".next").onclick = () => slides.scrollBy({ left: slides.clientWidth, behavior: "smooth" });
+    }
+    const like = post.querySelector(".like");
+    like.onclick = () => {
+      const likes = store.get("bbc-likes");
+      const on = !likes.includes(r.id);
+      store.set("bbc-likes", on ? [...likes, r.id] : likes.filter(x => x !== r.id));
+      like.classList.toggle("liked", on); like.textContent = on ? "♥" : "♡"; like.setAttribute("aria-pressed", on);
+      if (on) toast("Saved to your likes");
+    };
+    post.querySelector(".share").onclick = async () => {
+      const url = location.origin + location.pathname + "#" + r.id;
+      try {
+        if (navigator.share) await navigator.share({ title: r.dish, text: `${r.dish}: ${r.cost}`, url });
+        else { await navigator.clipboard.writeText(url); toast("Link copied"); }
+      } catch (e) {}
+    };
+  }
+
+  function renderMore() {
+    const next = shown.slice(rendered, rendered + PAGE);
+    next.forEach(r => {
+      const wrap = document.createElement("div");
+      wrap.innerHTML = postHTML(r).trim();
+      const post = wrap.firstChild;
+      feedEl.insertBefore(post, sentinel);
+      wire(post, r);
+    });
+    rendered += next.length;
+    if (rendered >= shown.length && observer) observer.disconnect();
+  }
+
+  const sentinel = document.createElement("div");
+  function apply() {
+    const q = searchEl.value.trim().toLowerCase();
+    shown = all.filter(r => (fmt === "All" || r.format === fmt) &&
+      (!q || [r.dish, r.caption, r.theme, r.format, (r.ingredients || []).join(" "), (r.hashtags || []).join(" ")]
+        .join(" ").toLowerCase().includes(q)));
+    feedEl.innerHTML = "";
+    feedEl.appendChild(sentinel);
+    rendered = 0;
+    if (!shown.length) { feedEl.insertAdjacentHTML("afterbegin", `<div class="empty">No recipes match that yet.</div>`); return; }
+    renderMore();
+    if (observer) observer.disconnect();
+    observer = new IntersectionObserver(e => { if (e[0].isIntersecting) renderMore(); }, { rootMargin: "800px" });
+    observer.observe(sentinel);
+  }
+
+  function buildFilters() {
+    const formats = ["All", ...new Set(all.map(r => r.format).filter(Boolean))];
+    filtersEl.innerHTML = formats.map(f => `<button class="filter ${f === fmt ? "on" : ""}">${esc(f)}</button>`).join("");
+    filtersEl.querySelectorAll(".filter").forEach(b => b.onclick = () => {
+      fmt = b.textContent; filtersEl.querySelectorAll(".filter").forEach(x => x.classList.toggle("on", x === b)); apply();
+    });
+  }
+
+  let t; searchEl.addEventListener("input", () => { clearTimeout(t); t = setTimeout(apply, 200); });
+
+  fetch("recipes.json", { cache: "no-cache" }).then(r => r.json()).then(data => {
+    all = data; buildFilters(); apply();
+    if (location.hash) {  // deep link to one recipe
+      const id = decodeURIComponent(location.hash.slice(1));
+      const idx = shown.findIndex(r => r.id === id);
+      if (idx >= 0) { while (rendered <= idx) renderMore(); document.getElementById(id).scrollIntoView(); }
+    }
+  }).catch(() => { feedEl.innerHTML = `<div class="empty">Recipes couldn't load. Please refresh.</div>`; });
+})();
+</script>
+</body>
+</html>
