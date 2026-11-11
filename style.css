@@ -42,6 +42,14 @@ h1, h2, h3 { font-family: "Poppins", "Inter", sans-serif; line-height: 1.15; mar
 .nav a { color: var(--ink); text-decoration: none; font-weight: 600; font-size: .95rem; }
 .nav a:hover { color: var(--green); }
 @media (max-width: 720px) { .nav { display: none; } }
+.brand, .site-header .btn { white-space: nowrap; }
+@media (max-width: 420px) {
+  .brand { font-size: 1rem; }
+  .brand img { width: 34px; height: 34px; }
+  .site-header .btn { padding: 8px 12px !important; font-size: .85rem !important; }
+  .stats b { font-size: 1.3rem; white-space: nowrap; }
+  .stats span { font-size: .82rem; }
+}
 
 /* ---------- buttons ---------- */
 .btn {
