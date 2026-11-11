@@ -3,31 +3,175 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Budget Bite Club</title>
-<style>
-  :root { --green:#16a34a; --dark:#14532d; --gold:#ffd34d; }
-  body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; background:var(--green); color:#fff; }
-  main { max-width:640px; margin:0 auto; padding:56px 20px; text-align:center; }
-  img { width:160px; height:160px; border-radius:50%; }
-  h1 { font-size:2.4rem; margin:24px 0 8px; }
-  p { font-size:1.15rem; line-height:1.6; }
-  .tag { color:var(--gold); font-weight:700; }
-  footer { margin-top:48px; font-size:.95rem; }
-  a { color:#fff; }
-</style>
+<title>Budget Bite Club | Restaurant food for $5 or less</title>
+<meta name="description" content="A new 60-second recipe every day: restaurant-style food for $5 or less, real prices, real ingredients, dinner in about 20 minutes.">
+<meta property="og:title" content="Budget Bite Club">
+<meta property="og:description" content="Restaurant food for $5 or less. A new recipe every day.">
+<meta property="og:image" content="https://budgetbiteclub-boop.github.io/img/share.jpg">
+<meta property="og:url" content="https://budgetbiteclub-boop.github.io/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
-  <img src="profile.png" alt="Budget Bite Club logo">
-  <h1>Budget Bite Club</h1>
-  <p class="tag">Restaurant food for $5 or less. New recipe every morning.</p>
-  <p>Short cooking videos with real prices, real ingredients and dinners you can make in about
-     20 minutes. Find us on YouTube, TikTok and Instagram as <strong>@budgetbiteclub</strong>.</p>
-  <p>Our videos use AI-generated visuals and narration, and every one is labeled as AI-generated.</p>
-  <footer>
-    <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms of Service</a><br><br>
-    Contact: <a href="mailto:clipped1919@gmail.com">clipped1919@gmail.com</a>
-  </footer>
+
+<!-- Reusable icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-yt" viewBox="0 0 24 24"><rect x="1.5" y="4.5" width="21" height="15" rx="4.5" fill="currentColor"/><path d="M10 8.8v6.4l5.6-3.2z" fill="#ff0033"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-tt" viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 2h-3.4v13.1a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V8.8a6.4 6.4 0 1 0 5.4 6.3V8.6a8 8 0 0 0 4.4 1.3V6.5a4.5 4.5 0 0 1-4.4-4.5z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5 12 13l8.5-6.5"/></symbol>
+</svg>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="profile.png" alt="">Budget Bite Club</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#week">The Week</a>
+      <a href="#recipe">Latest Recipe</a>
+      <a href="#why">Why Join</a>
+      <a href="#follow">Follow</a>
+    </nav>
+    <a class="btn btn-green" href="#follow" style="padding:9px 16px;font-size:.92rem">Join the Club</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">New recipe every day</span>
+        <h1>Restaurant food for <span class="hl">$5 or less.</span></h1>
+        <p class="lead">One-minute recipes with real prices, real ingredients and dinner on the table in about 20 minutes.</p>
+        <div class="btn-row">
+          <a class="btn btn-tt" href="https://www.tiktok.com/@budgetbiteclub" target="_blank" rel="noopener"><svg><use href="#i-tt"/></svg>TikTok</a>
+          <a class="btn btn-yt" href="https://www.youtube.com/@Budget_Bite_Club" target="_blank" rel="noopener"><svg style="color:#fff"><use href="#i-yt"/></svg>YouTube</a>
+          <a class="btn btn-ig" href="https://www.instagram.com/budget_biteclub/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Instagram</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <img src="img/rigatoni-pans.jpg" alt="">
+        <img src="img/cream-swirl.jpg" alt="">
+        <div class="price-badge"><small>vs $34 at a restaurant</small>$4.94</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="wrap">
+      <div><b>$5</b><span>or less per recipe</span></div>
+      <div><b>~20 min</b><span>start to plate</span></div>
+      <div><b>Daily</b><span>new video at 9 PM</span></div>
+    </div>
+  </div>
+
+  <!-- WEEK -->
+  <section id="week">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>A different format every day</h2>
+        <p>Every week has a theme, and every day of the week has its own kind of video.</p>
+      </div>
+      <div class="week">
+        <div class="day"><div class="d">Monday</div><h3>Mistake Monday</h3><p>The common mistake that ruins the dish, and the easy fix.</p></div>
+        <div class="day"><div class="d">Tuesday</div><h3>$5 vs $50</h3><p>A pricey restaurant favorite, made at home for a fraction.</p></div>
+        <div class="day"><div class="d">Wednesday</div><h3>Takeout Copycat</h3><p>Your delivery order, faster and cheaper from your own stove.</p></div>
+        <div class="day"><div class="d">Thursday</div><h3>Pantry Challenge</h3><p>Something great from staples you already have.</p></div>
+        <div class="day"><div class="d">Friday</div><h3>3 Ways, 1 Ingredient</h3><p>One cheap ingredient, three quick dinners.</p></div>
+        <div class="day"><div class="d">Saturday</div><h3>Rate This Hack</h3><p>We test a viral kitchen shortcut and give it an honest score.</p></div>
+        <div class="day"><div class="d">Sunday</div><h3>Speedrun</h3><p>A full dinner against the clock. Maximum speed, zero fuss.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECIPE SPOTLIGHT -->
+  <section id="recipe" class="spotlight">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Fresh from the kitchen</h2>
+        <p>Latest recipe: <strong>Budget Spicy Rigatoni alla Vodka</strong>. The creamy, spicy classic that costs $34 out, made at home for $4.94.</p>
+      </div>
+      <div class="gallery">
+        <img src="img/cream-swirl.jpg" alt="Cream swirling into tomato sauce" loading="lazy">
+        <img src="img/rigatoni-pans.jpg" alt="Two pans of spicy rigatoni from above" loading="lazy">
+        <img src="img/sauce-spoon.jpg" alt="Spoon of rich tomato sauce" loading="lazy">
+        <img src="img/chili-flakes.jpg" alt="Chili flakes falling into the pan" loading="lazy">
+        <img src="img/bowls.jpg" alt="Bowls of pasta ready to serve" loading="lazy">
+        <img src="img/fork-twirl.jpg" alt="Fork twirling pasta over a bowl" loading="lazy">
+      </div>
+      <div class="recipe-meta">
+        <span class="chip">💸 $4.94 total</span>
+        <span class="chip">⏱️ About 20 minutes</span>
+        <span class="chip">🍝 Pasta Under $5 week</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Why join the club</h2>
+        <p>Cooking videos that respect your wallet and your time.</p>
+      </div>
+      <div class="why">
+        <div class="card"><div class="icon">🧾</div><h3>Real prices</h3><p>Every video adds up what it costs as you cook, so you know the total before you shop.</p></div>
+        <div class="card"><div class="icon">💡</div><h3>Tips that explain why</h3><p>Not just steps. The reason each one works, so you get better at cooking, not just this recipe.</p></div>
+        <div class="card"><div class="icon">🔁</div><h3>Never boring</h3><p>Weekly themes and daily formats mean a new idea every day, never the same dish twice.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOLLOW -->
+  <section id="follow" class="follow">
+    <div class="wrap">
+      <h2>Join the Budget Bite Club</h2>
+      <p>A new recipe drops every day at 9 PM. Pick your favorite app and hit follow.</p>
+      <div class="socials">
+        <a class="social" href="https://www.tiktok.com/@budgetbiteclub" target="_blank" rel="noopener">
+          <span class="logo" style="background:var(--tt)"><svg><use href="#i-tt"/></svg></span>
+          <b>TikTok</b><span>@budgetbiteclub</span><em>Follow &rarr;</em>
+        </a>
+        <a class="social" href="https://www.youtube.com/@Budget_Bite_Club" target="_blank" rel="noopener">
+          <span class="logo" style="background:var(--yt)"><svg style="color:#fff"><use href="#i-yt"/></svg></span>
+          <b>YouTube Shorts</b><span>@Budget_Bite_Club</span><em>Subscribe &rarr;</em>
+        </a>
+        <a class="social" href="https://www.instagram.com/budget_biteclub/" target="_blank" rel="noopener">
+          <span class="logo" style="background:var(--ig)"><svg><use href="#i-ig"/></svg></span>
+          <b>Instagram Reels</b><span>@budget_biteclub</span><em>Follow &rarr;</em>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS -->
+  <section class="business">
+    <div class="wrap">
+      <div class="box">
+        <h2 style="color:var(--green-dark)">Brands &amp; partnerships</h2>
+        <p style="color:var(--muted);margin-top:0">Kitchen gear, grocery and food brands: let's make something delicious together.</p>
+        <a class="btn btn-green" href="mailto:clipped1919@gmail.com?subject=Partnership%20with%20Budget%20Bite%20Club"><svg><use href="#i-mail"/></svg>clipped1919@gmail.com</a>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; 2026 Budget Bite Club. Videos use AI-generated visuals and narration and are labeled as such.</div>
+    <div class="links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="mailto:clipped1919@gmail.com">Contact</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
