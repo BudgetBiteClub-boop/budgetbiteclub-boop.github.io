@@ -58,42 +58,32 @@
    {
     "key": "stock_pot",
     "name": "Large stock pot",
-    "url": "https://www.amazon.ca/s?k=8+quart+stainless+stock+pot&tag=budgetbiteclu-20"
+    "url": "https://www.amazon.ca/s?k=8+quart+stainless+stock+pot&rh=p_36%3A100-4500&tag=budgetbiteclu-20"
    },
    {
     "key": "skillet_stainless",
     "name": "Stainless steel skillet",
-    "url": "https://www.amazon.ca/s?k=stainless+steel+frying+pan+12+inch&tag=budgetbiteclu-20"
+    "url": "https://www.amazon.ca/s?k=stainless+steel+frying+pan+12+inch&rh=p_36%3A100-4500&tag=budgetbiteclu-20"
    },
    {
     "key": "chef_knife",
     "name": "8-inch chef's knife",
-    "url": "https://www.amazon.ca/s?k=8+inch+chef+knife&tag=budgetbiteclu-20"
+    "url": "https://www.amazon.ca/s?k=8+inch+chef+knife&rh=p_36%3A100-3000&tag=budgetbiteclu-20"
    },
    {
     "key": "cutting_board",
     "name": "Wooden cutting board",
-    "url": "https://www.amazon.ca/s?k=wood+cutting+board+large&tag=budgetbiteclu-20"
+    "url": "https://www.amazon.ca/s?k=wood+cutting+board+large&rh=p_36%3A100-3000&tag=budgetbiteclu-20"
    },
    {
     "key": "box_grater",
     "name": "Box grater",
-    "url": "https://www.amazon.ca/s?k=stainless+steel+box+grater&tag=budgetbiteclu-20"
+    "url": "https://www.amazon.ca/s?k=stainless+steel+box+grater&rh=p_36%3A100-2000&tag=budgetbiteclu-20"
    },
    {
     "key": "spider_strainer",
     "name": "Spider strainer",
-    "url": "https://www.amazon.ca/s?k=spider+strainer+skimmer&tag=budgetbiteclu-20"
-   },
-   {
-    "key": "tongs",
-    "name": "Kitchen tongs",
-    "url": "https://www.amazon.ca/s?k=kitchen+tongs+silicone+tips&tag=budgetbiteclu-20"
-   },
-   {
-    "key": "wooden_spoon",
-    "name": "Wooden spoons",
-    "url": "https://www.amazon.ca/s?k=wooden+spoons+for+cooking+set&tag=budgetbiteclu-20"
+    "url": "https://www.amazon.ca/s?k=spider+strainer+skimmer&rh=p_36%3A100-1500&tag=budgetbiteclu-20"
    }
   ]
  }
