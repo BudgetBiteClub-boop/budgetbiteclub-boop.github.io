@@ -53,6 +53,48 @@
    "recipes/2026-11-10/4.jpg",
    "recipes/2026-11-10/5.jpg"
   ],
-  "youtube": "https://youtube.com/shorts/SX3rBbBM6Bg"
+  "youtube": "https://youtube.com/shorts/SX3rBbBM6Bg",
+  "gear": [
+   {
+    "key": "stock_pot",
+    "name": "Large stock pot",
+    "url": "https://www.amazon.ca/s?k=8+quart+stainless+stock+pot&tag=budgetbiteclu-20"
+   },
+   {
+    "key": "skillet_stainless",
+    "name": "Stainless steel skillet",
+    "url": "https://www.amazon.ca/s?k=stainless+steel+frying+pan+12+inch&tag=budgetbiteclu-20"
+   },
+   {
+    "key": "chef_knife",
+    "name": "8-inch chef's knife",
+    "url": "https://www.amazon.ca/s?k=8+inch+chef+knife&tag=budgetbiteclu-20"
+   },
+   {
+    "key": "cutting_board",
+    "name": "Wooden cutting board",
+    "url": "https://www.amazon.ca/s?k=wood+cutting+board+large&tag=budgetbiteclu-20"
+   },
+   {
+    "key": "box_grater",
+    "name": "Box grater",
+    "url": "https://www.amazon.ca/s?k=stainless+steel+box+grater&tag=budgetbiteclu-20"
+   },
+   {
+    "key": "spider_strainer",
+    "name": "Spider strainer",
+    "url": "https://www.amazon.ca/s?k=spider+strainer+skimmer&tag=budgetbiteclu-20"
+   },
+   {
+    "key": "tongs",
+    "name": "Kitchen tongs",
+    "url": "https://www.amazon.ca/s?k=kitchen+tongs+silicone+tips&tag=budgetbiteclu-20"
+   },
+   {
+    "key": "wooden_spoon",
+    "name": "Wooden spoons",
+    "url": "https://www.amazon.ca/s?k=wooden+spoons+for+cooking+set&tag=budgetbiteclu-20"
+   }
+  ]
  }
 ]

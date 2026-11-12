@@ -101,7 +101,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <div>&copy; 2026 Budget Bite Club. Videos use AI-generated visuals and narration and are labeled as such.</div>
+    <div>&copy; 2026 Budget Bite Club. Videos use AI-generated visuals and narration and are labeled as such. As an Amazon Associate I earn from qualifying purchases.</div>
     <div class="links"><a href="index.html">Home</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
   </div>
 </footer>
@@ -156,6 +156,10 @@
           <ul>${r.ingredients.map(i => `<li>${esc(i)}</li>`).join("")}</ul></details>` : ""}
         ${r.steps && r.steps.length ? `<details><summary>How to make it</summary>
           <ol>${r.steps.map(s => `<li>${esc(s)}</li>`).join("")}</ol></details>` : ""}
+        ${r.gear && r.gear.length ? `<details><summary>What you'll need (${r.gear.length})</summary>
+          <ul>${r.gear.map(g => `<li><a href="${esc(g.url)}" target="_blank" rel="sponsored noopener">${esc(g.name)}</a></li>`).join("")}</ul>
+          <p style="font-size:.8rem;color:#6b7280;margin:6px 0 0">As an Amazon Associate I earn from qualifying purchases.</p></details>` : ""}
+        <a href="r/${esc(r.id)}.html" style="display:inline-block;margin-top:8px;font-weight:700">Full recipe page &rarr;</a>
       </div>
     </article>`;
   }
