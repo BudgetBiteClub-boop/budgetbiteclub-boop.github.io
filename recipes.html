@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Recipe Feed | Budget Bite Club</title>
-<meta name="description" content="Scroll every Budget Bite Club recipe: restaurant-style food for $5 or less, with real prices, ingredients and steps.">
+<meta name="description" content="Scroll every Budget Bite Club recipe: restaurant-style food for $5 or less, with estimated prices, ingredients and steps.">
 <meta property="og:title" content="The Budget Bite Club Recipe Feed">
 <meta property="og:description" content="Every recipe, $5 or less. Scroll, save and cook.">
 <meta property="og:image" content="https://budgetbiteclub-boop.github.io/img/share.jpg">
@@ -84,7 +84,7 @@
 <div class="feed-top">
   <div class="wrap">
     <h1>The Recipe Feed</h1>
-    <p>Every Budget Bite Club recipe, $5 or less. New ones added every week.</p>
+    <p>Every Budget Bite Club recipe, $5 or less. New ones added every day.</p><p style="font-size:.85rem;color:#6b7280">Prices are estimates and may differ from what you pay.</p>
   </div>
 </div>
 <div class="tools">
@@ -101,7 +101,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <div>&copy; 2026 Budget Bite Club. Videos use AI-generated visuals and narration and are labeled as such. As an Amazon Associate I earn from qualifying purchases.</div>
+    <div>&copy; 2026 Budget Bite Club. Videos use AI-generated visuals and narration and are labeled as such. As an Amazon Associate I earn from qualifying purchases. *Prices are estimates based on typical Canadian grocery prices for the amounts used; what you pay will vary by store, location, brand, sales and date.</div>
     <div class="links"><a href="index.html">Home</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
   </div>
 </footer>
@@ -125,7 +125,7 @@
 
   function postHTML(r) {
     const liked = store.get("bbc-likes").includes(r.id);
-    const meta = [r.cost && `💸 ${esc(r.cost)}`, r.minutes && `⏱️ ${esc(r.minutes)} min`,
+    const meta = [r.cost && `💸 about ${esc(r.cost)}*`, r.minutes && `⏱️ ${esc(r.minutes)} min`,
                   r.servings && `🍽️ Serves ${esc(r.servings)}`, r.theme && `📅 ${esc(r.theme)}`].filter(Boolean);
     return `
     <article class="post" id="${esc(r.id)}">
@@ -137,7 +137,7 @@
       <div class="carousel">
         <div class="slides">${r.images.map((src, i) =>
           `<img src="${esc(src)}" alt="${esc(r.dish)} photo ${i + 1}" loading="lazy">`).join("")}</div>
-        ${r.cost ? `<div class="badge">${esc(r.cost)}</div>` : ""}
+        ${r.cost ? `<div class="badge">est. ${esc(r.cost)}</div>` : ""}
         ${r.images.length > 1 ? `<button class="nav-btn prev" aria-label="Previous photo">&#8249;</button>
           <button class="nav-btn next" aria-label="Next photo">&#8250;</button>
           <div class="dots">${r.images.map((_, i) => `<i class="${i ? "" : "on"}"></i>`).join("")}</div>` : ""}

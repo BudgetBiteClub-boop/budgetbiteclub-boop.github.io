@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="p:domain_verify" content="c75533f06081d9b4c110a67a1e15fe76"/>
 <title>Budget Bite Club | Restaurant food for $5 or less</title>
-<meta name="description" content="A new 60-second recipe every day: restaurant-style food for $5 or less, real prices, real ingredients, dinner in about 20 minutes.">
+<meta name="description" content="A new 60-second recipe every day: restaurant-style food for $5 or less, honest price estimates, real ingredients, dinner in about 20 minutes.">
 <meta property="og:title" content="Budget Bite Club">
 <meta property="og:description" content="Restaurant food for $5 or less. A new recipe every day.">
 <meta property="og:image" content="https://budgetbiteclub-boop.github.io/img/share.jpg">
@@ -49,7 +49,7 @@
       <div>
         <span class="eyebrow">New recipe every day</span>
         <h1>Restaurant food for <span class="hl">$5 or less.</span></h1>
-        <p class="lead">One-minute recipes with real prices, real ingredients and dinner on the table in about 20 minutes.</p>
+        <p class="lead">One-minute recipes with honest price estimates, real ingredients and dinner on the table in about 20 minutes.</p>
         <div class="btn-row">
           <a class="btn btn-tt" href="https://www.tiktok.com/@budgetbiteclub" target="_blank" rel="noopener"><svg><use href="#i-tt"/></svg>TikTok</a>
           <a class="btn btn-yt" href="https://www.youtube.com/@Budget_Bite_Club" target="_blank" rel="noopener"><svg style="color:#fff"><use href="#i-yt"/></svg>YouTube</a>
@@ -59,7 +59,7 @@
       <div class="hero-art" aria-hidden="true">
         <img src="img/rigatoni-pans.jpg" alt="">
         <img src="img/cream-swirl.jpg" alt="">
-        <div class="price-badge"><small>vs $34 at a restaurant</small>$4.94</div>
+        <div class="price-badge"><small>vs $34 at a restaurant</small>$4.94*</div>
       </div>
     </div>
   </section>
@@ -97,7 +97,7 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Fresh from the kitchen</h2>
-        <p>Latest recipe: <strong>Budget Spicy Rigatoni alla Vodka</strong>. The creamy, spicy classic that costs $34 out, made at home for $4.94.</p>
+        <p>Latest recipe: <strong>Budget Spicy Rigatoni alla Vodka</strong>. The creamy, spicy classic that costs about $34 out, made at home for about $4.94.*</p>
       </div>
       <div class="gallery">
         <img src="img/cream-swirl.jpg" alt="Cream swirling into tomato sauce" loading="lazy">
@@ -108,7 +108,7 @@
         <img src="img/fork-twirl.jpg" alt="Fork twirling pasta over a bowl" loading="lazy">
       </div>
       <div class="recipe-meta">
-        <span class="chip">💸 $4.94 total</span>
+        <span class="chip">💸 about $4.94 total*</span>
         <span class="chip">⏱️ About 20 minutes</span>
         <span class="chip">🍝 Pasta Under $5 week</span>
       </div>
@@ -124,12 +124,12 @@
     const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
     const sec = document.getElementById("recipe");
     sec.querySelector(".section-head p").innerHTML =
-      `Latest: <strong>${esc(feed[0].dish)}</strong>${feed[0].cost ? " for " + esc(feed[0].cost) : ""}. Tap any recipe to see the photos, ingredients and steps.`;
+      `Latest: <strong>${esc(feed[0].dish)}</strong>${feed[0].cost ? " for about " + esc(feed[0].cost) + "*" : ""}. Tap any recipe to see the photos, ingredients and steps.`;
     sec.querySelector(".gallery").innerHTML = feed.slice(0, 6).map(r => `
       <a href="recipes.html#${esc(r.id)}" style="position:relative;display:block;text-decoration:none">
         <img src="${esc(r.images[0])}" alt="${esc(r.dish)}" loading="lazy">
         <span style="position:absolute;left:8px;right:8px;bottom:8px;background:rgba(0,0,0,.62);color:#fff;border-radius:10px;padding:6px 10px;font:700 .85rem Inter,sans-serif">
-          ${esc(r.dish)}${r.cost ? " &middot; " + esc(r.cost) : ""}</span>
+          ${esc(r.dish)}${r.cost ? " &middot; about " + esc(r.cost) + "*" : ""}</span>
       </a>`).join("");
     const chips = sec.querySelector(".recipe-meta");
     if (chips) chips.innerHTML = `<span class="chip">🍳 ${feed.length} recipe${feed.length > 1 ? "s" : ""} and counting</span>`;
@@ -144,7 +144,7 @@
         <p>Cooking videos that respect your wallet and your time.</p>
       </div>
       <div class="why">
-        <div class="card"><div class="icon">🧾</div><h3>Real prices</h3><p>Every video adds up what it costs as you cook, so you know the total before you shop.</p></div>
+        <div class="card"><div class="icon">🧾</div><h3>Honest price estimates</h3><p>Every video adds up roughly what it costs as you cook, so you know about what to budget before you shop. Your store's prices will vary.</p></div>
         <div class="card"><div class="icon">💡</div><h3>Tips that explain why</h3><p>Not just steps. The reason each one works, so you get better at cooking, not just this recipe.</p></div>
         <div class="card"><div class="icon">🔁</div><h3>Never boring</h3><p>Weekly themes and daily formats mean a new idea every day, never the same dish twice.</p></div>
       </div>
@@ -189,7 +189,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <div>&copy; 2026 Budget Bite Club. Videos use AI-generated visuals and narration and are labeled as such. As an Amazon Associate I earn from qualifying purchases.</div>
+    <div>&copy; 2026 Budget Bite Club. Videos use AI-generated visuals and narration and are labeled as such. As an Amazon Associate I earn from qualifying purchases. *Prices are estimates based on typical Canadian grocery prices for the amounts used; what you pay will vary by store, location, brand, sales and date.</div>
     <div class="links">
       <a href="recipes.html">Recipe Feed</a>
       <a href="privacy.html">Privacy Policy</a>
