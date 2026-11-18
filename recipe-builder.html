@@ -105,6 +105,29 @@ function render(r,opt){
     g.forEach(function(k){var a=el('a',null,C.gear[k].name+' →');a.href=C.gear[k].url;a.target='_blank';a.rel='sponsored noopener';gd.appendChild(a);});
     s2.appendChild(gd);}
   body.appendChild(s2);card.appendChild(body);
+  if(state.sig||state.id){ // "Email me this recipe" (sent by the BBC PC, which checks every 10 min, noon to midnight ET)
+    var mf=el('form','rb-mail');mf.noValidate=true;
+    var ml=el('label','rb-mail-h','Email me this recipe');ml.htmlFor='em';
+    var mr=el('div','rb-mail-row'),mi=el('input');mi.type='email';mi.id='em';mi.placeholder='you@example.com';mi.autocomplete='email';
+    var mb=el('button','btn btn-green','Email it to me');mb.type='submit';mr.appendChild(mi);mr.appendChild(mb);
+    var mo=el('label','rb-opt'),mc=el('input');mc.type='checkbox';mo.appendChild(mc);
+    mo.appendChild(document.createTextNode(' Also send me the free weekly $5 recipes and shopping lists (unsubscribe anytime)'));
+    var mn=el('p','rb-mail-note');mn.setAttribute('aria-live','polite');
+    mf.appendChild(ml);mf.appendChild(mr);mf.appendChild(mo);mf.appendChild(mn);
+    mf.addEventListener('submit',function(e){e.preventDefault();var v=mi.value.trim();
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){mn.textContent='Please check your email address.';mn.className='rb-mail-note err';mi.focus();return;}
+      mb.disabled=true;mb.textContent='Sending…';
+      var body=state.id?{email:v,news:mc.checked,id:state.id}:{email:v,news:mc.checked,recipe:r,sig:state.sig};
+      fetch(C.url+'/email',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
+      .then(function(x){return x.json().then(function(j){return {ok:x.ok,j:j};});})
+      .then(function(x){if(x.ok){if(x.j.id&&!state.id)state.id=x.j.id;
+          var h=0;try{h=+new Intl.DateTimeFormat('en-CA',{timeZone:'America/Toronto',hour:'numeric',hourCycle:'h23'}).format(new Date());}catch(e){h=15;}
+          var when=h>=12?'It usually arrives within 15 minutes':'It’ll arrive by about 12:30 PM Eastern';
+          mf.innerHTML='';mf.appendChild(el('p','rb-mail-done','On its way to '+v+'! '+when+'; check your spam folder if you don’t see it.'+(mc.checked?' Welcome to the club!':'')));}
+        else{mn.textContent=x.j.error||'Something went wrong. Please try again.';mn.className='rb-mail-note err';}})
+      .catch(function(){mn.textContent='Could not reach the Recipe Builder. Please try again.';mn.className='rb-mail-note err';})
+      .finally(function(){mb.disabled=false;mb.textContent='Email it to me';});});
+    card.appendChild(mf);}
   var act=el('footer','rb-actions'),sb=el('button','btn btn-gold','Share recipe');sb.type='button';
   sb.addEventListener('click',function(){share(r,state,sb);});
   var again=el('button','btn btn-green',opt.shared?'Make my own $5 recipe':'Make another recipe');again.type='button';
