@@ -449,3 +449,15 @@ section { padding: 72px 0; }
 .rb-mail-note.err { color: #7f1d1d; font-weight: 600; }
 .rb-mail-done { margin: 0; font-weight: 600; color: var(--green-dark); }
 @media print { .rb-mail { display: none !important; } }
+/* Recipe Builder: have/buy switches, spend line, separate newsletter button */
+.rb-ing button.pill { border: 0; cursor: pointer; font-family: inherit; padding: 3px 10px; transition: background-color .15s, transform .1s; }
+.rb-ing button.pill:hover { filter: brightness(.96); }
+.rb-ing button.pill:active { transform: scale(.95); }
+.rb-ing li.got .nm, .rb-ing li.got .pr { color: var(--muted); }
+.rb-spend { display: flex; justify-content: space-between; margin-top: 2px; padding: 10px 12px; border-radius: 12px;
+  background: var(--gold-soft); font: 800 1rem "Poppins", sans-serif; color: #7a5a00; }
+.rb-mail-sub { margin: -2px 0 10px; font-size: .86rem; color: #5b6472; }
+.rb-join { margin-top: 16px; padding-top: 14px; border-top: 1px dashed #e6d9a8; }
+.rb-join .btn { padding: 10px 18px; font-size: .92rem; }
+.rb-join .rb-mail-sub { margin: 8px 0 0; }
+.rb-mail-done a { color: var(--green); font-weight: 800; }
