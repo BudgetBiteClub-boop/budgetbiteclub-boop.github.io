@@ -75,21 +75,33 @@ function render(r,opt){
    [r.minutes+' min','total time'],[money(per)+'*','per serving']].forEach(function(x){
     var d=el('div');d.appendChild(el('b',null,x[0]));d.appendChild(el('span',null,x[1]));facts.appendChild(d);});
   head.appendChild(facts);card.appendChild(head);
-  var body=el('div','rb-body'),s1=el('section'),buy=[];
-  s1.appendChild(el('h3',null,'Ingredients'));
+  var body=el('div','rb-body'),s1=el('section'),c2=null;
+  var st=r.ingredients.map(function(i){return i.status==='have'?'have':'buy';});
+  var ih=el('h3',null,'Ingredients');ih.appendChild(el('small',null,'Tap a tag: have it or buy'));s1.appendChild(ih);
   var ul=el('ul','rb-ing');
-  r.ingredients.forEach(function(i){var li=el('li'),nm=el('span','nm',i.item),have=i.status==='have';
-    nm.appendChild(el('span','pill '+(have?'have':'buy'),have?'have it':'buy'));li.appendChild(nm);
-    li.appendChild(el('span','pr',money(i.cost)));if(i.amount)li.appendChild(el('span','am',i.amount));ul.appendChild(li);
-    if(!have)buy.push((i.amount?i.amount+' ':'')+i.item);});
+  r.ingredients.forEach(function(i,n){var li=el('li'),nm=el('span','nm',i.item),pb=el('button','pill');pb.type='button';
+    function paint(){var have=st[n]==='have';pb.className='pill '+(have?'have':'buy');pb.textContent=have?'have it':'buy';
+      pb.setAttribute('aria-pressed',have?'true':'false');
+      pb.setAttribute('aria-label',i.item+': '+(have?'you have it':'need to buy')+'. Tap to switch.');li.classList.toggle('got',have);}
+    pb.addEventListener('click',function(){st[n]=st[n]==='have'?'buy':'have';paint();update();});
+    paint();nm.appendChild(pb);li.appendChild(nm);li.appendChild(el('span','pr',money(i.cost)));
+    if(i.amount)li.appendChild(el('span','am',i.amount));ul.appendChild(li);});
   s1.appendChild(ul);
   var tot=el('div','rb-total');tot.appendChild(el('span',null,'Estimated total'));tot.appendChild(el('span',null,money(r.total_cost)+'*'));
-  s1.appendChild(tot);if(r.price_note)s1.appendChild(el('p','rb-note',r.price_note));
-  var list='Shopping list for '+r.title+'\n'+buy.map(function(x){return '- '+x;}).join('\n');
-  if(buy.length){var sh=el('div','rb-shop');sh.appendChild(el('h4',null,'Shopping list'));var su=el('ul');
-    buy.forEach(function(x){su.appendChild(el('li',null,x));});sh.appendChild(su);
-    var cb=el('button','btn btn-ghost btn-sm','Copy list');cb.type='button';cb.addEventListener('click',function(){copy(list,cb);});
-    sh.appendChild(cb);s1.appendChild(sh);}
+  s1.appendChild(tot);var spend=el('div','rb-spend');s1.appendChild(spend);
+  if(r.price_note)s1.appendChild(el('p','rb-note',r.price_note));
+  var sh=el('div','rb-shop');sh.appendChild(el('h4',null,'Shopping list'));var su=el('ul');sh.appendChild(su);
+  var cb=el('button','btn btn-ghost btn-sm','Copy list');cb.type='button';cb.addEventListener('click',function(){copy(listText(),cb);});
+  sh.appendChild(cb);s1.appendChild(sh);
+  function buyItems(){return r.ingredients.filter(function(i,n){return st[n]==='buy';});}
+  function line(i){return (i.amount?i.amount+' ':'')+i.item;}
+  function listText(){return 'Shopping list for '+r.title+'\n'+buyItems().map(function(i){return '- '+line(i);}).join('\n');}
+  function update(){var b=buyItems(),cost=b.reduce(function(a,i){return a+Number(i.cost||0);},0);
+    spend.innerHTML='';spend.appendChild(el('span',null,b.length?'You need to buy':'You have everything'));
+    spend.appendChild(el('span',null,money(cost)+'*'));
+    su.innerHTML='';b.forEach(function(i){su.appendChild(el('li',null,line(i)));});
+    if(!b.length)su.appendChild(el('li',null,'Nothing to buy. Happy cooking!'));
+    cb.hidden=!b.length;if(c2)c2.hidden=!b.length;}
   body.appendChild(s1);
   var s2=el('section'),h3=el('h3',null,'Steps');h3.appendChild(el('small',null,'Tap a step when it’s done'));s2.appendChild(h3);
   var ol=el('ol','rb-steps');
@@ -105,28 +117,40 @@ function render(r,opt){
     g.forEach(function(k){var a=el('a',null,C.gear[k].name+' →');a.href=C.gear[k].url;a.target='_blank';a.rel='sponsored noopener';gd.appendChild(a);});
     s2.appendChild(gd);}
   body.appendChild(s2);card.appendChild(body);
-  if(state.sig||state.id){ // "Email me this recipe" (sent by the BBC PC, which checks every 10 min, noon to midnight ET)
-    var mf=el('form','rb-mail');mf.noValidate=true;
-    var ml=el('label','rb-mail-h','Email me this recipe');ml.htmlFor='em';
+  if(state.sig||state.id){ // "Email me my list & recipe" (sent by the BBC PC, which checks every 10 min, noon to midnight ET)
+    var mf=el('form','rb-mail');mf.noValidate=true;var top=el('div');
+    var ml=el('label','rb-mail-h','Email me my list & recipe');ml.htmlFor='em';
     var mr=el('div','rb-mail-row'),mi=el('input');mi.type='email';mi.id='em';mi.placeholder='you@example.com';mi.autocomplete='email';
     var mb=el('button','btn btn-green','Email it to me');mb.type='submit';mr.appendChild(mi);mr.appendChild(mb);
-    var mo=el('label','rb-opt'),mc=el('input');mc.type='checkbox';mo.appendChild(mc);
-    mo.appendChild(document.createTextNode(' Also send me the free weekly $5 recipes and shopping lists (unsubscribe anytime)'));
     var mn=el('p','rb-mail-note');mn.setAttribute('aria-live','polite');
-    mf.appendChild(ml);mf.appendChild(mr);mf.appendChild(mo);mf.appendChild(mn);
-    mf.addEventListener('submit',function(e){e.preventDefault();var v=mi.value.trim();
-      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){mn.textContent='Please check your email address.';mn.className='rb-mail-note err';mi.focus();return;}
+    top.appendChild(ml);top.appendChild(el('p','rb-mail-sub','Only the items you marked "buy", with the recipe underneath.'));
+    top.appendChild(mr);top.appendChild(mn);mf.appendChild(top);
+    var join=el('div','rb-join'),jb=el('button','btn btn-ghost','Join the free weekly newsletter');jb.type='button';
+    var jn=el('p','rb-mail-sub','A new week of $5 recipes and shopping lists every Monday, plus the free "7 Dinners Under $5" PDF. Unsubscribe anytime.');
+    join.appendChild(jb);join.appendChild(jn);mf.appendChild(join);
+    function okEmail(){var v=mi.value.trim();if(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v))return v;
+      mn.textContent='Please type your email address above.';mn.className='rb-mail-note err';mi.focus();return '';}
+    mf.addEventListener('submit',function(e){e.preventDefault();var v=okEmail();if(!v)return;
       mb.disabled=true;mb.textContent='Sending…';
-      var body=state.id?{email:v,news:mc.checked,id:state.id}:{email:v,news:mc.checked,recipe:r,sig:state.sig};
+      var body={email:v,news:false,statuses:st};
+      if(state.id)body.id=state.id;else{body.recipe=r;body.sig=state.sig;}
       fetch(C.url+'/email',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
       .then(function(x){return x.json().then(function(j){return {ok:x.ok,j:j};});})
       .then(function(x){if(x.ok){if(x.j.id&&!state.id)state.id=x.j.id;
           var h=0;try{h=+new Intl.DateTimeFormat('en-CA',{timeZone:'America/Toronto',hour:'numeric',hourCycle:'h23'}).format(new Date());}catch(e){h=15;}
           var when=h>=12?'It usually arrives within 15 minutes':'It’ll arrive by about 12:30 PM Eastern';
-          mf.innerHTML='';mf.appendChild(el('p','rb-mail-done','On its way to '+v+'! '+when+'; check your spam folder if you don’t see it.'+(mc.checked?' Welcome to the club!':'')));}
+          top.innerHTML='';top.appendChild(el('p','rb-mail-done','Your list and recipe are on the way to '+v+'! '+when+'; check your spam folder if you don’t see it.'));}
         else{mn.textContent=x.j.error||'Something went wrong. Please try again.';mn.className='rb-mail-note err';}})
       .catch(function(){mn.textContent='Could not reach the Recipe Builder. Please try again.';mn.className='rb-mail-note err';})
       .finally(function(){mb.disabled=false;mb.textContent='Email it to me';});});
+    jb.addEventListener('click',function(){var v=okEmail();if(!v)return;jb.disabled=true;jb.textContent='Joining…';
+      fetch('newsletter.json',{cache:'no-store'}).then(function(x){return x.json();}).then(function(c){
+        if(!c.kit_form_id)throw new Error('no form');var fd=new FormData();fd.append('email_address',v);
+        return fetch('https://app.kit.com/forms/'+encodeURIComponent(c.kit_form_id)+'/subscriptions',{method:'POST',mode:'no-cors',body:fd});})
+      .then(function(){join.innerHTML='';var d=el('p','rb-mail-done','Welcome to the club! Check your inbox and confirm, so Monday’s recipes reach you. ');
+        var a=el('a',null,'Download your free PDF');a.href='7-dinners-under-5.pdf';a.setAttribute('download','');d.appendChild(a);join.appendChild(d);})
+      .catch(function(){jb.disabled=false;jb.textContent='Join the free weekly newsletter';
+        mn.textContent='Could not sign you up just now. Please try again.';mn.className='rb-mail-note err';});});
     card.appendChild(mf);}
   var act=el('footer','rb-actions'),sb=el('button','btn btn-gold','Share recipe');sb.type='button';
   sb.addEventListener('click',function(){share(r,state,sb);});
@@ -134,11 +158,11 @@ function render(r,opt){
   again.addEventListener('click',function(){f.scrollIntoView({behavior:'smooth',block:'start'});t.focus({preventScroll:true});});
   if(opt.shared){act.appendChild(again);act.appendChild(sb);}else{act.appendChild(sb);act.appendChild(again);}
   makeLink(r,state);
-  if(buy.length){var c2=el('button','btn btn-ghost','Copy shopping list');c2.type='button';
-    c2.addEventListener('click',function(){copy(list,c2);});act.appendChild(c2);}
+  c2=el('button','btn btn-ghost','Copy shopping list');c2.type='button';
+  c2.addEventListener('click',function(){copy(listText(),c2);});act.appendChild(c2);
   var pr=el('button','btn btn-ghost','Print');pr.type='button';pr.addEventListener('click',function(){window.print();});act.appendChild(pr);
   act.appendChild(el('p','fine','*AI-generated recipe, not tested in our kitchen. Prices are estimates for the amounts used and will vary by store. Check that it suits any allergies or diet before cooking. Tool links go to Amazon.ca (affiliate).'));
-  card.appendChild(act);
+  card.appendChild(act);update();
   show(card);h.focus({preventScroll:true});
 }
 function skeleton(){var s=el('div','rb-skel');s.setAttribute('role','status');
