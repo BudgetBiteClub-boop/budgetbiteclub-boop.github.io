@@ -436,3 +436,16 @@ section { padding: 72px 0; }
   .rb-steps button::before { border: 1px solid #999; }
 }
 .rb-head h2:focus { outline: none; }
+/* Recipe Builder: "Email me this recipe" */
+.rb-mail { padding: 18px clamp(20px, 4vw, 32px); border-top: 1px solid var(--line); background: var(--gold-soft); }
+.rb-mail-h { display: block; font: 700 1.05rem "Poppins", sans-serif; color: var(--green-dark); margin-bottom: 8px; }
+.rb-mail-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.rb-mail-row input { flex: 1 1 220px; min-width: 0; font: inherit; padding: 11px 16px; border: 1.5px solid #ddd5c2; border-radius: 999px; background: #fff; }
+.rb-mail-row input:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 4px rgba(21, 128, 61, .14); }
+.rb-mail-row .btn { padding: 11px 20px; font-size: .95rem; }
+.rb-opt { display: flex; gap: 8px; align-items: flex-start; margin-top: 10px; font-size: .9rem; color: #374151; cursor: pointer; }
+.rb-opt input { margin-top: 4px; width: 16px; height: 16px; accent-color: var(--green); flex: none; }
+.rb-mail-note { margin: 8px 0 0; font-size: .88rem; min-height: 1px; }
+.rb-mail-note.err { color: #7f1d1d; font-weight: 600; }
+.rb-mail-done { margin: 0; font-weight: 600; color: var(--green-dark); }
+@media print { .rb-mail { display: none !important; } }
