@@ -137,7 +137,8 @@ f.addEventListener('submit',function(e){
 });
 recent();
 var sid=new URLSearchParams(location.search).get('r');
-if(sid){show(skeleton());fetch(C.url+'/share/'+encodeURIComponent(sid)).then(function(x){return x.json().then(function(j){return {ok:x.ok,j:j};});})
+if(sid){var top=document.querySelector('.rb-top');top.parentNode.insertBefore(out,top);out.style.marginTop='32px';
+  show(skeleton());fetch(C.url+'/share/'+encodeURIComponent(sid)).then(function(x){return x.json().then(function(j){return {ok:x.ok,j:j};});})
   .then(function(x){if(x.ok&&x.j.recipe){render(x.j.recipe,{shared:true,id:sid});document.title=x.j.recipe.title+' | $5 Recipe Builder';}
     else err(x.j.error||'This shared recipe has expired or doesn\'t exist. Make your own below!');})
   .catch(function(){err('Could not load that shared recipe. Check your connection and try again.');});}
