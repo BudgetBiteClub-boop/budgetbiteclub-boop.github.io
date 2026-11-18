@@ -1,5 +1,91 @@
 [
   {
+    "id": "2026-11-18",
+    "date": "2026-11-18",
+    "dish": "Takeout-Style Leftover Turkey Fried Rice",
+    "format": "Takeout Copycat",
+    "theme": "Thanksgiving Leftover Glow-Ups",
+    "hook": "$18 DELIVERY OR $4.80?",
+    "cost": "$4.80",
+    "servings": 2,
+    "minutes": 20,
+    "caption": "Delivery fried rice: $18 and 45 minutes. Mine: $4.80 and 20 minutes, with leftover turkey.\nThe trick? Dry the rice so it fries instead of steams.\nRice, oil, onion, garlic, frozen mixed veg, leftover turkey, 2 eggs, soy sauce, pepper.",
+    "hashtags": [
+      "friedrice",
+      "leftoverturkey",
+      "turkeyfriedrice",
+      "takeoutcopycat",
+      "budgetmeals",
+      "cheapeats",
+      "easydinner",
+      "fakeaway",
+      "leftoverrecipes",
+      "wokcooking"
+    ],
+    "ingredients": [
+      "1 cup (200 g) long-grain white rice",
+      "1 1/4 cups (300 ml) water plus a pinch of salt",
+      "2 tbsp (30 ml) vegetable oil, divided",
+      "1/2 medium onion (100 g), diced",
+      "2 cloves garlic, minced",
+      "1 cup (120 g) frozen mixed vegetables (peas, carrots, corn)",
+      "1 cup (120 g) leftover roast turkey, shredded bite-size (refrigerated no more than 3-4 days)",
+      "2 large eggs, beaten with a pinch of salt",
+      "2 tbsp soy sauce",
+      "1/8 tsp white or black pepper"
+    ],
+    "steps": [
+      "Rinse the rice until the water runs mostly clear. Add it to a small pot with 300 ml water and a pinch of salt, then bring to a boil over high heat. Cover, turn the heat to low and simmer for 12 minutes. Take it off the heat, rest it covered for 2 minutes, then spread it on a large plate or sheet pan to steam off while you prep.",
+      "While the rice cooks, dice the onion, mince the garlic, shred the turkey into bite-size pieces and beat the eggs with a pinch of salt.",
+      "Heat 1 tbsp oil in a large skillet or wok over high heat until it shimmers. Cook the onion for 2 minutes. Add the garlic for 30 seconds, then add the frozen vegetables and stir-fry for 2 minutes until hot and any water has cooked off.",
+      "Push the vegetables to one side and add the remaining 1 tbsp oil to the empty side. Pour in the eggs and scramble for 30-45 seconds until just set, then break them up into the vegetables.",
+      "Add the rice and turkey. Press everything flat, let it sit for 1 minute to toast, then toss. Repeat for 3-4 minutes until the rice crackles and the turkey is steaming hot all the way through (74°C/165°F).",
+      "Drizzle the soy sauce around the hot edge of the pan, add the pepper and toss for 30 seconds. Taste, adjust the salt and serve immediately."
+    ],
+    "images": [
+      "recipes/2026-11-18/1.jpg",
+      "recipes/2026-11-18/2.jpg",
+      "recipes/2026-11-18/3.jpg",
+      "recipes/2026-11-18/4.jpg",
+      "recipes/2026-11-18/5.jpg"
+    ],
+    "youtube": "https://youtube.com/shorts/QdjqdslDJzE",
+    "gear": [
+      {
+        "key": "wok",
+        "name": "Souped Up Recipes carbon steel wok",
+        "url": "https://www.amazon.ca/dp/B0F2FP917T?tag=bbcwebsite-20"
+      },
+      {
+        "key": "saucepan",
+        "name": "Starfrit The Rock saucepan",
+        "url": "https://www.amazon.ca/dp/B0D1YRBRY4?tag=bbcwebsite-20"
+      },
+      {
+        "key": "sheet_pan",
+        "name": "GoodCook 13x9 baking sheet",
+        "url": "https://www.amazon.ca/dp/B0026RHI0U?tag=bbcwebsite-20"
+      },
+      {
+        "key": "chef_knife",
+        "name": "Cuisinart 8-inch chef's knife",
+        "url": "https://www.amazon.ca/dp/B0D5ST1BD2?tag=bbcwebsite-20"
+      },
+      {
+        "key": "cutting_board",
+        "name": "Farberware bamboo cutting board",
+        "url": "https://www.amazon.ca/dp/B0002TU482?tag=bbcwebsite-20"
+      },
+      {
+        "key": "wooden_spoon",
+        "name": "Wooden cooking utensil set",
+        "url": "https://www.amazon.ca/dp/B0BYZDBPGL?tag=bbcwebsite-20"
+      }
+    ],
+    "published_at": "2026-11-18T18:12:08-05:00",
+    "pin_dates": {}
+  },
+  {
     "id": "2026-11-17",
     "date": "2026-11-17",
     "dish": "$5 Leftover Turkey Monte Cristo (Brunch-Diner Copycat with Cranberry Dip)",
