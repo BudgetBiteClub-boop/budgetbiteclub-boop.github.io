@@ -83,7 +83,8 @@
         "url": "https://www.amazon.ca/dp/B0F6F4W5JW?tag=bbcwebsite-20"
       }
     ],
-    "published_at": "2026-11-17T18:07:26-05:00"
+    "published_at": "2026-11-17T18:07:26-05:00",
+    "pin_dates": {}
   },
   {
     "id": "2026-11-16",
@@ -175,7 +176,8 @@
         "url": "https://www.amazon.ca/dp/B074WB5D79?tag=bbcwebsite-20"
       }
     ],
-    "published_at": "2026-11-16T18:05:47-05:00"
+    "published_at": "2026-11-16T18:05:47-05:00",
+    "pin_dates": {}
   },
   {
     "id": "2026-11-15",
@@ -262,7 +264,10 @@
         "url": "https://www.amazon.ca/dp/B0CV4XMX3S?tag=bbcwebsite-20"
       }
     ],
-    "published_at": "2026-11-15T23:37:57-05:00"
+    "published_at": "2026-11-15T23:37:57-05:00",
+    "pin_dates": {
+      "2": "2026-11-18T11:02:09-05:00"
+    }
   },
   {
     "id": "2026-11-14",
@@ -335,7 +340,10 @@
         "url": "https://www.amazon.ca/dp/B09SG1M7R2?tag=bbcwebsite-20"
       }
     ],
-    "published_at": "2026-11-15T23:37:57-05:00"
+    "published_at": "2026-11-15T23:37:57-05:00",
+    "pin_dates": {
+      "2": "2026-11-18T11:02:09-05:00"
+    }
   },
   {
     "id": "2026-11-13",
@@ -417,7 +425,8 @@
         "url": "https://www.amazon.ca/dp/B0002TU482?tag=bbcwebsite-20"
       }
     ],
-    "published_at": "2026-11-15T23:37:57-05:00"
+    "published_at": "2026-11-15T23:37:57-05:00",
+    "pin_dates": {}
   },
   {
     "id": "2026-11-12",
@@ -501,7 +510,8 @@
         "url": "https://www.amazon.ca/dp/B0D5ST1BD2?tag=bbcwebsite-20"
       }
     ],
-    "published_at": "2026-11-15T23:37:57-05:00"
+    "published_at": "2026-11-15T23:37:57-05:00",
+    "pin_dates": {}
   },
   {
     "id": "2026-11-10",
@@ -589,6 +599,7 @@
         "name": "Spider strainers (2-pack)",
         "url": "https://www.amazon.ca/dp/B0GPQF7SDY?tag=bbcwebsite-20"
       }
-    ]
+    ],
+    "pin_dates": {}
   }
 ]
