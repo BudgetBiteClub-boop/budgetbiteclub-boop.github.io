@@ -39,20 +39,36 @@ function err(msg){var d=el('div','rb-msg err',msg);d.setAttribute('role','alert'
 window.bbcCheckFailed=function(){var ck=document.getElementById('ck');if(!ck){ck=el('p','rb-msg err');ck.id='ck';ck.setAttribute('role','alert');ck.style.marginTop='12px';f.querySelector('.cf-turnstile').after(ck);}ck.textContent='The "I\'m human" check couldn\'t load. Refresh the page, or try another browser (ad blockers and private modes can block it).';return true;};
 window.bbcCheckExpired=function(){if(window.turnstile)turnstile.reset();};
 function servings(){var c=f.querySelector('input[name="servings"]:checked');return c?c.value:'2';}
-function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')||[];}catch(e){return [];}}
-function remember(r){try{var a=load().filter(function(x){return x.title!==r.title;});a.unshift(r);
-  localStorage.setItem(KEY,JSON.stringify(a.slice(0,6)));}catch(e){}recent();}
+function load(){try{var a=JSON.parse(localStorage.getItem(KEY)||'[]')||[];
+  return a.map(function(x){return x&&x.recipe?x:{recipe:x,sig:''};}).filter(function(x){return x.recipe&&x.recipe.title;});}catch(e){return [];}}
+function remember(r,sig,id){try{var a=load().filter(function(x){return x.recipe.title!==r.title;});
+  a.unshift({recipe:r,sig:sig||'',id:id||''});localStorage.setItem(KEY,JSON.stringify(a.slice(0,6)));}catch(e){}recent();}
 function recent(){var box=document.getElementById('recent'),ul=box.querySelector('ul'),a=load();ul.innerHTML='';
-  box.hidden=!a.length;a.forEach(function(r){var li=el('li'),b=el('button',null,r.title);b.type='button';
-  b.appendChild(el('span',null,money(r.total_cost)+'*'));b.addEventListener('click',function(){render(r);});
+  box.hidden=!a.length;a.forEach(function(x){var r=x.recipe,li=el('li'),b=el('button',null,r.title);b.type='button';
+  b.appendChild(el('span',null,money(r.total_cost)+'*'));b.addEventListener('click',function(){render(r,{sig:x.sig,id:x.id});});
   li.appendChild(b);ul.appendChild(li);});}
-function copy(text,btn){var old=btn.textContent;function done(){btn.textContent='Copied!';setTimeout(function(){btn.textContent=old;},1600);}
+function link(id){return location.origin+location.pathname+(id?'?r='+encodeURIComponent(id):'');}
+function makeLink(r,state){ // saved as soon as a recipe appears, so tapping Share opens the share sheet instantly
+  if(state.id||!state.sig)return Promise.resolve(state.id||'');
+  if(!state.p)state.p=fetch(C.url+'/share',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({recipe:r,sig:state.sig})}).then(function(x){return x.json();})
+    .then(function(j){state.id=j.id||'';if(state.id)remember(r,state.sig,state.id);return state.id;}).catch(function(){return '';});
+  return state.p;}
+function share(r,state,btn){
+  function go(id){var u=link(id),txt=id?'I got "'+r.title+'" for about '+money(r.total_cost)+' with the free $5 Recipe Builder:'
+      :'Turn what’s in your fridge into a $5 recipe with the free Recipe Builder:';
+    if(navigator.share){navigator.share({title:r.title+' | $5 Recipe Builder',text:txt,url:u}).catch(function(e){
+      if(e&&e.name!=='AbortError')copy(u,btn,'Link copied!');});}else{copy(u,btn,'Link copied!');}}
+  if(state.id||!state.sig)return go(state.id);
+  btn.disabled=true;makeLink(r,state).then(go).finally(function(){btn.disabled=false;});}
+function copy(text,btn,msg){var old=btn.textContent;function done(){btn.textContent=msg||'Copied!';setTimeout(function(){btn.textContent=old;},1800);}
   function fallback(){var ta=el('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);
     ta.select();try{document.execCommand('copy');done();}catch(e){}ta.remove();}
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done,fallback);}else{fallback();}}
-function render(r){
+function render(r,opt){
+  opt=opt||{};var state={sig:opt.sig||'',id:opt.id||''};
   var card=el('article','rb-recipe'),head=el('header','rb-head');
-  head.appendChild(el('p','rb-kicker','Your $5 recipe'));
+  head.appendChild(el('p','rb-kicker',opt.shared?'Shared with you':'Your $5 recipe'));
   var h=el('h2',null,r.title);h.tabIndex=-1;head.appendChild(h);
   var facts=el('div','rb-facts'),per=r.servings?r.total_cost/r.servings:0;
   [[money(r.total_cost)+'*','estimated total'],[String(r.servings),r.servings==1?'serving':'servings'],
@@ -89,9 +105,12 @@ function render(r){
     g.forEach(function(k){var a=el('a',null,C.gear[k].name+' →');a.href=C.gear[k].url;a.target='_blank';a.rel='sponsored noopener';gd.appendChild(a);});
     s2.appendChild(gd);}
   body.appendChild(s2);card.appendChild(body);
-  var act=el('footer','rb-actions'),again=el('button','btn btn-green','Make another recipe');again.type='button';
+  var act=el('footer','rb-actions'),sb=el('button','btn btn-gold','Share recipe');sb.type='button';
+  sb.addEventListener('click',function(){share(r,state,sb);});
+  var again=el('button','btn btn-green',opt.shared?'Make my own $5 recipe':'Make another recipe');again.type='button';
   again.addEventListener('click',function(){f.scrollIntoView({behavior:'smooth',block:'start'});t.focus({preventScroll:true});});
-  act.appendChild(again);
+  if(opt.shared){act.appendChild(again);act.appendChild(sb);}else{act.appendChild(sb);act.appendChild(again);}
+  makeLink(r,state);
   if(buy.length){var c2=el('button','btn btn-ghost','Copy shopping list');c2.type='button';
     c2.addEventListener('click',function(){copy(list,c2);});act.appendChild(c2);}
   var pr=el('button','btn btn-ghost','Print');pr.type='button';pr.addEventListener('click',function(){window.print();});act.appendChild(pr);
@@ -112,10 +131,15 @@ f.addEventListener('submit',function(e){
   fetch(C.url+'/recipe',{method:'POST',headers:{'Content-Type':'application/json'},
     body:JSON.stringify({text:text,servings:servings(),token:tok})})
   .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j};});})
-  .then(function(x){if(x.ok&&x.j.recipe){remember(x.j.recipe);render(x.j.recipe);}else err(x.j.error||'Something went wrong. Please try again.');})
+  .then(function(x){if(x.ok&&x.j.recipe){remember(x.j.recipe,x.j.sig);render(x.j.recipe,{sig:x.j.sig});}else err(x.j.error||'Something went wrong. Please try again.');})
   .catch(function(){err('Could not reach the Recipe Builder. Check your connection and try again.');})
   .finally(function(){go.disabled=false;go.textContent=LABEL;if(window.turnstile)turnstile.reset();});
 });
 recent();
+var sid=new URLSearchParams(location.search).get('r');
+if(sid){show(skeleton());fetch(C.url+'/share/'+encodeURIComponent(sid)).then(function(x){return x.json().then(function(j){return {ok:x.ok,j:j};});})
+  .then(function(x){if(x.ok&&x.j.recipe){render(x.j.recipe,{shared:true,id:sid});document.title=x.j.recipe.title+' | $5 Recipe Builder';}
+    else err(x.j.error||'This shared recipe has expired or doesn\'t exist. Make your own below!');})
+  .catch(function(){err('Could not load that shared recipe. Check your connection and try again.');});}
 })();
 </script><script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script><footer class="site-footer"><div class="wrap"><div><div class="brandline">Budget Bite Club</div><div class="fine">Restaurant food for $5 or less, every day. Videos use AI-generated visuals and narration. As an Amazon Associate I earn from qualifying purchases. *Prices are estimates and may differ from what you pay.</div></div><nav class="links" aria-label="Footer"><a href="recipes.html">Recipe Feed</a><a href="recipe-builder.html">Recipe Builder</a><a href="kit.html">Kitchen Gear</a><a href="links.html">Links</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:clipped1919@gmail.com">Contact</a></nav></div></footer><script src="newsletter.js" defer></script></body></html>
