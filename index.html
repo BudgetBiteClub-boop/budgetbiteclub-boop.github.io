@@ -16,10 +16,12 @@
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#fffaf0">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <!-- Reusable icons -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -31,7 +33,7 @@
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="profile.png" alt="">Budget Bite Club</a>
+    <a class="brand" href="#top"><img src="profile.png" alt="" width="40" height="40">Budget Bite Club</a>
     <nav class="nav" aria-label="Main">
       <a href="#week">The Week</a>
       <a href="recipes.html">Recipe Feed</a>
@@ -41,11 +43,11 @@
       <a href="#why">Why Join</a>
       <a href="#follow">Follow</a>
     </nav>
-    <a class="btn btn-green" href="#follow" style="padding:9px 16px;font-size:.92rem">Join the Club</a>
+    <a class="btn btn-green btn-sm" href="#follow">Join the Club</a>
   </div>
 </header>
 
-<main id="top">
+<main id="top"><span id="main"></span>
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
@@ -58,11 +60,11 @@
           <a class="btn btn-yt" href="https://www.youtube.com/@Budget_Bite_Club" target="_blank" rel="noopener"><svg style="color:#fff"><use href="#i-yt"/></svg>YouTube</a>
           <a class="btn btn-ig" href="https://www.instagram.com/budget_biteclub/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Instagram</a>
         </div>
-        <p class="quick-links" style="margin:14px 0 0;font-weight:700"><a href="recipes.html">All recipes</a> &middot; <a href="recipe-builder.html">$5 Recipe Builder</a> &middot; <a href="kit.html">Kitchen gear</a> &middot; <a href="links.html">All links</a></p>
+        <ul class="quick-links" aria-label="Quick links"><li><a href="recipes.html">All recipes</a></li><li><a href="recipe-builder.html">$5 Recipe Builder</a></li><li><a href="kit.html">Kitchen gear</a></li><li><a href="links.html">All links</a></li></ul>
       </div>
       <div class="hero-art" aria-hidden="true">
-        <img src="img/rigatoni-pans.jpg" alt="">
-        <img src="img/cream-swirl.jpg" alt="">
+        <img src="img/rigatoni-pans.jpg" alt="" width="540" height="960" fetchpriority="high" decoding="async">
+        <img src="img/cream-swirl.jpg" alt="" width="540" height="960" fetchpriority="high" decoding="async">
         <div class="price-badge"><small>vs $34 at a restaurant</small>$4.94*</div>
       </div>
     </div>
@@ -140,6 +142,25 @@
   }).catch(() => {});
   </script>
 
+  <!-- RECIPE BUILDER PROMO -->
+  <section class="promo spotlight" aria-labelledby="promo-h">
+    <div class="wrap">
+      <div class="panel">
+        <div>
+          <span class="eyebrow gold">New &middot; free</span>
+          <h2 id="promo-h">Random stuff in the fridge? <span class="hl">Make it a $5 dinner.</span></h2>
+          <p>Type what you have and the $5 Recipe Builder writes you a recipe with estimated prices, a shopping list and simple steps. Five free recipes a day.</p>
+          <a class="btn btn-gold" href="recipe-builder.html">Try the Recipe Builder &rarr;</a>
+        </div>
+        <div class="demo" aria-hidden="true">
+          <div class="q">You type</div>
+          <div class="in">eggs, tortillas, a can of black beans</div>
+          <div class="out"><b>Crispy Black Bean &amp; Egg Tacos</b><span>Serves 2 &middot; 20 min &middot; about $3.72*</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- WHY -->
   <section id="why">
     <div class="wrap">
@@ -193,13 +214,16 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <div>&copy; 2026 Budget Bite Club. Videos use AI-generated visuals and narration and are labeled as such. As an Amazon Associate I earn from qualifying purchases. *Prices are estimates based on typical Canadian grocery prices for the amounts used; what you pay will vary by store, location, brand, sales and date.</div>
-    <div class="links">
+    <div><div class="brandline">Budget Bite Club</div><div class="fine">&copy; 2026 Budget Bite Club. Videos use AI-generated visuals and narration and are labeled as such. As an Amazon Associate I earn from qualifying purchases. *Prices are estimates based on typical Canadian grocery prices for the amounts used; what you pay will vary by store, location, brand, sales and date.</div></div>
+    <nav class="links" aria-label="Footer">
       <a href="recipes.html">Recipe Feed</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
+      <a href="recipe-builder.html">Recipe Builder</a>
+      <a href="kit.html">Kitchen Gear</a>
+      <a href="links.html">Links</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
       <a href="mailto:clipped1919@gmail.com">Contact</a>
-    </div>
+    </nav>
   </div>
 </footer>
 </body>
