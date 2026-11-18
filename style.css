@@ -461,3 +461,18 @@ section { padding: 72px 0; }
 .rb-join .btn { padding: 10px 18px; font-size: .92rem; }
 .rb-join .rb-mail-sub { margin: 8px 0 0; }
 .rb-mail-done a { color: var(--green); font-weight: 800; }
+/* Recipe Builder: "Shop your list" */
+.rb-store { margin-top: 18px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+.rb-store h4 { margin: 0 0 8px; font: 700 .98rem "Poppins", sans-serif; color: var(--green-dark); }
+.rb-store-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-bottom: 8px; }
+.rb-store-row label { font-weight: 700; font-size: .9rem; }
+.rb-store-row select { font: inherit; font-size: .95rem; padding: 8px 12px; border: 1.5px solid #ddd5c2; border-radius: 999px; background: var(--cream); color: var(--ink); max-width: 100%; }
+.rb-store-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.rb-store-list li { display: flex; align-items: center; gap: 8px; }
+.rb-find { flex: 1; min-width: 0; display: flex; justify-content: space-between; gap: 10px; align-items: center; text-decoration: none;
+  background: var(--green-soft); color: var(--green-dark); font-weight: 700; border-radius: 12px; padding: 10px 12px; transition: background-color .15s; }
+.rb-find:hover { background: #c9f5d8; }
+.rb-find span { flex: none; font-size: .82rem; color: var(--green); }
+.rb-flipp { flex: none; font-size: .78rem; font-weight: 700; color: #7a5a00; text-decoration: none; background: var(--gold-soft); border-radius: 999px; padding: 6px 10px; }
+.rb-flipp:hover { text-decoration: underline; }
+@media print { .rb-store { display: none !important; } }
