@@ -476,3 +476,39 @@ section { padding: 72px 0; }
 .rb-flipp { flex: none; font-size: .78rem; font-weight: 700; color: #7a5a00; text-decoration: none; background: var(--gold-soft); border-radius: 999px; padding: 6px 10px; }
 .rb-flipp:hover { text-decoration: underline; }
 @media print { .rb-store { display: none !important; } }
+/* Recipe Builder: first-visit opener (social-style title card; swipe, scroll or tap to start) */
+.rb-open { position: relative; min-height: calc(100svh - 64px); display: grid; place-items: center; overflow: hidden;
+  background: #0f2e1b; color: #fff; text-align: center; outline: none; }
+.rb-open-bg { position: absolute; inset: -8%; display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; transform: rotate(-6deg) scale(1.08);
+  filter: saturate(1.15); opacity: .55; animation: drift 18s ease-in-out infinite alternate; }
+.rb-open-bg img { width: 100%; height: 100%; object-fit: cover; border-radius: 18px; }
+.rb-open::after { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 80% at 50% 45%, rgba(15,46,27,.35), rgba(15,46,27,.92) 70%); }
+.rb-open-in { position: relative; z-index: 1; padding: 32px 22px 96px; max-width: 640px; }
+.rb-open-tag { display: inline-block; background: var(--gold); color: var(--green-dark); font: 800 .78rem "Inter", sans-serif; letter-spacing: .1em;
+  border-radius: 999px; padding: 6px 12px; transform: rotate(-3deg); box-shadow: 0 6px 18px rgba(0,0,0,.25); }
+.rb-open-h { font: 800 clamp(2.9rem, 13vw, 5.6rem)/0.98 "Poppins", sans-serif; letter-spacing: -.03em; margin: 18px 0 14px;
+  text-shadow: 0 6px 30px rgba(0,0,0,.35); }
+.rb-open-h .eyes { display: inline-block; animation: peek 2.6s ease-in-out infinite; }
+.rb-open-sub { font-size: clamp(1.1rem, 4.6vw, 1.4rem); margin: 0 0 20px; color: #e8f5ec; }
+.rb-open-sub b { color: var(--gold); }
+.rb-tick { position: relative; height: 2.6em; margin: 0 auto 26px; max-width: 420px; }
+.rb-tick span { position: absolute; inset: 0; display: grid; place-items: center; font: 800 1.05rem "Poppins", sans-serif;
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22); border-radius: 999px; backdrop-filter: blur(6px);
+  opacity: 0; transform: translateY(10px); transition: opacity .45s var(--ease), transform .45s var(--ease); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 16px; }
+.rb-tick span.on { opacity: 1; transform: none; }
+.rb-open-go { font: 800 1.1rem "Poppins", sans-serif; color: var(--green-dark); background: var(--gold); border: 0; border-radius: 999px;
+  padding: 16px 34px; cursor: pointer; box-shadow: 0 10px 30px rgba(255,211,77,.35); transition: transform .15s var(--ease); }
+.rb-open-go:hover { transform: translateY(-2px) scale(1.02); }
+.rb-open-swipe { position: absolute; left: 50%; bottom: 46px; transform: translateX(-50%); font: 700 .85rem "Inter", sans-serif; color: #cfe8d7;
+  display: flex; flex-direction: column; align-items: center; gap: 6px; animation: bob 1.6s ease-in-out infinite; }
+.rb-open-swipe i { width: 22px; height: 22px; border-left: 3px solid var(--gold); border-top: 3px solid var(--gold); transform: rotate(45deg); border-radius: 3px; }
+.rb-open-fine { position: absolute; left: 0; right: 0; bottom: 14px; font-size: .72rem; color: #9fc2ab; margin: 0; }
+@keyframes drift { from { transform: rotate(-6deg) scale(1.08) translateY(0); } to { transform: rotate(-4deg) scale(1.14) translateY(-3%); } }
+@keyframes bob { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -8px); } }
+@keyframes peek { 0%, 70%, 100% { transform: none; } 80% { transform: translateX(-6px); } 90% { transform: translateX(6px); } }
+@media (min-width: 900px) { .rb-open-bg { grid-template-columns: repeat(4, 1fr); } }
+@media print { .rb-open { display: none !important; } }
+.rb-open-bg { grid-template-rows: repeat(2, 1fr); }
+.rb-open::after { background: radial-gradient(130% 90% at 50% 42%, rgba(15,46,27,.42), rgba(15,46,27,.86) 78%); }
+@media (max-width: 899px) { .rb-open-bg { opacity: .7; } }
+.rb-open-in { padding-bottom: 130px; } .rb-open-swipe { bottom: 40px; }
