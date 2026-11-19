@@ -1,5 +1,95 @@
 [
   {
+    "id": "2026-11-19",
+    "date": "2026-11-19",
+    "dish": "Leftover Mashed Potato Korokke Hand Rolls (Crispy Potato Croquette Temaki with Spicy Mayo)",
+    "format": "Pantry Challenge",
+    "theme": "Thanksgiving Leftover Glow-Ups",
+    "hook": "LEFTOVER MASH SUSHI?!",
+    "cost": "$4.85",
+    "servings": 4,
+    "minutes": 20,
+    "caption": "Cold leftover mash → shatter-crisp croquettes rolled in nori. 🥔🍙\n8 hand rolls, $4.85 total, $1.21 a serving, 20 minutes.\nIngredients: leftover mashed potatoes, flour, egg, panko, oil, leftover rice, rice vinegar, sugar, salt, nori, cucumber, mayo, sriracha, soy sauce.",
+    "hashtags": [
+      "leftoverrecipes",
+      "korokke",
+      "handroll",
+      "temaki",
+      "potatocroquette",
+      "budgetmeals",
+      "cheapeats",
+      "pantrychallenge",
+      "mashedpotatoes",
+      "sushiathome"
+    ],
+    "ingredients": [
+      "2 cups cold leftover mashed potatoes (about 400 g potatoes' worth, already made with butter and milk)",
+      "2 tbsp all-purpose flour, plus extra if the mash is very soft",
+      "1 large egg",
+      "3/4 cup panko breadcrumbs",
+      "1/2 cup vegetable oil, for shallow frying",
+      "2 cups cold cooked white rice (leftover, refrigerated no more than 3 days; short-grain is stickiest if you have it)",
+      "2 tbsp rice vinegar",
+      "1 tsp white sugar",
+      "1/4 tsp salt",
+      "4 sheets nori, cut in half (8 half-sheets)",
+      "1/2 cucumber, cut into thin matchsticks",
+      "3 tbsp mayonnaise",
+      "1 tbsp sriracha",
+      "2 tbsp soy sauce, for dipping"
+    ],
+    "steps": [
+      "Shape the croquettes (3 min): Take the mash straight from the fridge. If it feels sticky or loose, work in 1 to 2 extra tbsp flour. Roll it into 8 finger-shaped logs about 10 cm long and 2 cm thick.",
+      "Bread them (2 min): Put the 2 tbsp flour, the beaten egg and the panko in three shallow bowls. Roll each log in flour, then egg, then panko, pressing the crumbs on firmly.",
+      "Fry (7 min): Heat the 1/2 cup oil in a large skillet over medium-high to about 350°F (175°C), until a panko crumb sizzles immediately. Fry the logs, turning every 1.5 to 2 minutes, for 6 to 7 minutes total until deep golden on all sides and steaming hot in the center (74°C/165°F). Drain on paper towel.",
+      "Season the rice while they fry (3 min): Microwave the rice with 1 tbsp water, covered, for 2 to 3 minutes, stirring halfway, until steaming hot all the way through. Stir the vinegar, sugar and salt together until dissolved, then fold into the rice with a cutting motion and spread it on a plate to cool to warm.",
+      "Mix the spicy mayo (30 sec): Stir the mayonnaise and sriracha together. Add more sriracha if you like it hotter.",
+      "Roll and eat (3 min): Lay a half-sheet of nori shiny side down in your palm. Press about 1/4 cup rice onto the left third. Lay a croquette and a few cucumber sticks diagonally across the rice and drizzle with spicy mayo. Fold the bottom-left corner up over the filling and roll into a cone. Serve right away with soy sauce for dipping, while the nori and panko are still crisp."
+    ],
+    "images": [
+      "recipes/2026-11-19/1.jpg",
+      "recipes/2026-11-19/2.jpg",
+      "recipes/2026-11-19/3.jpg",
+      "recipes/2026-11-19/4.jpg",
+      "recipes/2026-11-19/5.jpg"
+    ],
+    "youtube": "https://youtube.com/shorts/XhNvJW35hcM",
+    "gear": [
+      {
+        "key": "skillet_cast_iron",
+        "name": "Lodge cast iron skillet",
+        "url": "https://www.amazon.ca/dp/B00008GKDG?tag=bbcwebsite-20"
+      },
+      {
+        "key": "tongs",
+        "name": "Kitchen tongs with silicone tips (2-pack)",
+        "url": "https://www.amazon.ca/dp/B074WB5D79?tag=bbcwebsite-20"
+      },
+      {
+        "key": "mixing_bowls",
+        "name": "KitchenAid nesting mixing bowls",
+        "url": "https://www.amazon.ca/dp/B0C3MXN4VD?tag=bbcwebsite-20"
+      },
+      {
+        "key": "cutting_board",
+        "name": "Farberware bamboo cutting board",
+        "url": "https://www.amazon.ca/dp/B0002TU482?tag=bbcwebsite-20"
+      },
+      {
+        "key": "wooden_spoon",
+        "name": "Wooden cooking utensil set",
+        "url": "https://www.amazon.ca/dp/B0BYZDBPGL?tag=bbcwebsite-20"
+      },
+      {
+        "key": "measuring",
+        "name": "Measuring cups and spoons set",
+        "url": "https://www.amazon.ca/dp/B09SG1M7R2?tag=bbcwebsite-20"
+      }
+    ],
+    "published_at": "2026-11-19T18:06:35-05:00",
+    "pin_dates": {}
+  },
+  {
     "id": "2026-11-18",
     "date": "2026-11-18",
     "dish": "Takeout-Style Leftover Turkey Fried Rice",
