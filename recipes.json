@@ -1,5 +1,89 @@
 [
   {
+    "id": "2026-11-20",
+    "date": "2026-11-20",
+    "dish": "Copycat KFC Famous Bowl: Leftover Turkey Edition (Popcorn Turkey, Mash, Corn, Gravy & Cheese)",
+    "format": "Fridge Raid Friday",
+    "theme": "Thanksgiving Leftover Glow-Ups",
+    "hook": "FRIDGE RAID FAMOUS BOWL",
+    "cost": "$4.91",
+    "servings": 2,
+    "minutes": 18,
+    "caption": "Leftover turkey, cold mash and half a can of corn just became crunchy popcorn turkey Famous Bowls. 🍗\nCopycat KFC Famous Bowl for two in 18 minutes, $4.91 total ($2.46 a bowl).\nIngredients: leftover turkey, flour, paprika, garlic powder, salt, pepper, 1 egg, vegetable oil, leftover mashed potatoes, canned corn, turkey gravy, cheddar.",
+    "hashtags": [
+      "fridgeraidfriday",
+      "leftoverturkey",
+      "famousbowl",
+      "copycatrecipe",
+      "budgetmeals",
+      "cheapeats",
+      "leftoverrecipes",
+      "popcornchicken",
+      "comfortfood",
+      "dinnerfor2"
+    ],
+    "ingredients": [
+      "1/2 cup (120 mL) vegetable oil, for shallow frying",
+      "150 g (about 1 1/2 cups) leftover cooked turkey, cut into 2 cm popcorn-size chunks",
+      "1/2 cup (65 g) all-purpose flour",
+      "1 tsp paprika, 1/2 tsp garlic powder, 1/2 tsp salt, 1/4 tsp black pepper",
+      "1 egg beaten with 1 tbsp water",
+      "2 cups (about 400 g) leftover mashed potatoes",
+      "1/2 can (about 3/4 cup drained) canned corn, from a 341 mL can",
+      "1 cup leftover turkey gravy",
+      "1/2 cup (50 g) shredded cheddar, from a block"
+    ],
+    "steps": [
+      "Pour the oil into a 25 cm (10-inch) skillet. It should sit about 5 mm deep. Heat over medium-high for about 4 minutes, until it reaches 175°C (350°F) or a pinch of flour sizzles right away.",
+      "While the oil heats, mix the flour, paprika, garlic powder, salt and pepper in a bowl. Toss the turkey chunks in the seasoned flour, dip them in the beaten egg, then toss them in the flour again. Let them sit on a plate for 2 minutes.",
+      "Meanwhile, heat each leftover in its own covered microwave-safe bowl. Give the mashed potatoes about 3 minutes and stir halfway, adding a splash of milk or water if they're stiff. Drain the corn and give it about 1 minute. Heat the gravy for about 2 minutes, stirring once, until it is bubbling. All leftovers must be steaming hot, 74°C (165°F).",
+      "Fry the turkey in a single layer for 1 1/2 to 2 minutes per side, until deep golden and crisp. The turkey is already cooked, so you are only crisping the coating and heating it through to 74°C (165°F). Drain on a paper towel.",
+      "Build two bowls. Start with a cup of hot mash in each, then add a spoonful of corn and the popcorn turkey. Pour the hot gravy over everything and finish with the cheddar. The heat from the gravy melts the cheese in about 30 seconds. Serve right away."
+    ],
+    "images": [
+      "recipes/2026-11-20/1.jpg",
+      "recipes/2026-11-20/2.jpg",
+      "recipes/2026-11-20/3.jpg",
+      "recipes/2026-11-20/4.jpg",
+      "recipes/2026-11-20/5.jpg"
+    ],
+    "youtube": "https://youtube.com/shorts/MhYvSJOydx4",
+    "gear": [
+      {
+        "key": "skillet_cast_iron",
+        "name": "Lodge cast iron skillet",
+        "url": "https://www.amazon.ca/dp/B00008GKDG?tag=bbcwebsite-20"
+      },
+      {
+        "key": "mixing_bowls",
+        "name": "KitchenAid nesting mixing bowls",
+        "url": "https://www.amazon.ca/dp/B0C3MXN4VD?tag=bbcwebsite-20"
+      },
+      {
+        "key": "tongs",
+        "name": "Kitchen tongs with silicone tips (2-pack)",
+        "url": "https://www.amazon.ca/dp/B074WB5D79?tag=bbcwebsite-20"
+      },
+      {
+        "key": "ladle",
+        "name": "Cuisinart stainless steel ladle",
+        "url": "https://www.amazon.ca/dp/B0CV4XMX3S?tag=bbcwebsite-20"
+      },
+      {
+        "key": "chef_knife",
+        "name": "Cuisinart 8-inch chef's knife",
+        "url": "https://www.amazon.ca/dp/B0D5ST1BD2?tag=bbcwebsite-20"
+      },
+      {
+        "key": "cutting_board",
+        "name": "Farberware bamboo cutting board",
+        "url": "https://www.amazon.ca/dp/B0002TU482?tag=bbcwebsite-20"
+      }
+    ],
+    "published_at": "2026-11-20T18:07:09-05:00",
+    "pin_dates": {}
+  },
+  {
     "id": "2026-11-19",
     "date": "2026-11-19",
     "dish": "Leftover Mashed Potato Korokke Hand Rolls (Crispy Potato Croquette Temaki with Spicy Mayo)",
@@ -260,7 +344,9 @@
       }
     ],
     "published_at": "2026-11-17T18:07:26-05:00",
-    "pin_dates": {}
+    "pin_dates": {
+      "2": "2026-11-20T18:07:12-05:00"
+    }
   },
   {
     "id": "2026-11-16",
@@ -354,7 +440,8 @@
     ],
     "published_at": "2026-11-16T18:05:47-05:00",
     "pin_dates": {
-      "2": "2026-11-18T18:07:54-05:00"
+      "2": "2026-11-18T18:07:54-05:00",
+      "3": "2026-11-20T18:07:12-05:00"
     }
   },
   {
