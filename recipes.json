@@ -1,5 +1,91 @@
 [
   {
+    "id": "2026-11-21",
+    "date": "2026-11-21",
+    "dish": "Crispy Leftover Stuffing Waffles with Turkey, Gravy and Cranberry",
+    "format": "Rate This Hack",
+    "theme": "Thanksgiving Leftover Glow-Ups",
+    "hook": "CRISPY STUFFING WAFFLES",
+    "cost": "$4.32",
+    "servings": 2,
+    "minutes": 25,
+    "caption": "Leftover stuffing became crispy stuffing waffles with turkey, gravy and cranberry, $2.16 a serving.\nThe waffle iron hack: does it stick or release? Rated honestly. $4.32 total, serves 2, 25 minutes.\n\nIngredients: 2 cups leftover stuffing, 1 egg, 2 tbsp milk, 1 cup leftover turkey, 1/2 cup gravy, 1/4 cup cranberry sauce, 1 tsp canola oil",
+    "hashtags": [
+      "stuffingwaffles",
+      "thanksgivingleftovers",
+      "leftoverturkey",
+      "wafflehack",
+      "ratethishack",
+      "cheapmeals",
+      "budgetcooking",
+      "leftoverrecipes",
+      "easydinner",
+      "foodhacks"
+    ],
+    "ingredients": [
+      "2 cups (about 300 g) Leftover stuffing",
+      "1 large Egg",
+      "2 tbsp (30 ml) Milk",
+      "120 g (about 1 cup) Leftover cooked turkey, sliced or shredded",
+      "1/2 cup (125 ml) Leftover gravy",
+      "1/4 cup Cranberry sauce",
+      "1 tsp Canola oil, for greasing"
+    ],
+    "steps": [
+      "1. Preheat your waffle iron to medium-high. No waffle iron? Heat a nonstick skillet over medium heat instead.",
+      "2. Put the stuffing in a mixing bowl and break up any big clumps with a fork.",
+      "3. In a small bowl, beat the egg with the milk, then stir it into the stuffing until it holds together when squeezed. If it still feels crumbly, add another splash of milk.",
+      "4. Brush the waffle iron lightly with oil. Pack in half the stuffing mixture and close the lid.",
+      "5. Cook 6 to 8 minutes without opening early, until deep golden and crisp. The centre should reach 74°C / 165°F on a thermometer, since it contains raw egg and leftovers.",
+      "6. Lift the waffle out with a spatula and keep it warm on a plate. Repeat with the rest of the mixture. (Skillet method: press the mixture into two 1.5 cm thick patties and cook 4 to 5 minutes per side until crisp and 74°C / 165°F inside.)",
+      "7. While the waffles cook, put the gravy in a saucepan and bring it to a gentle boil, stirring.",
+      "8. Add the turkey to the gravy, cover, and heat on low for 3 to 5 minutes until the turkey is steaming hot, 74°C / 165°F.",
+      "9. Plate each waffle, spoon the turkey and gravy over the top, and finish with a dollop of cranberry sauce."
+    ],
+    "images": [
+      "recipes/2026-11-21/1.jpg",
+      "recipes/2026-11-21/2.jpg",
+      "recipes/2026-11-21/3.jpg",
+      "recipes/2026-11-21/4.jpg",
+      "recipes/2026-11-21/5.jpg"
+    ],
+    "youtube": "https://youtube.com/shorts/8qV0xUjXE7I",
+    "gear": [
+      {
+        "key": "mixing_bowls",
+        "name": "KitchenAid nesting mixing bowls",
+        "url": "https://www.amazon.ca/dp/B0C3MXN4VD?tag=bbcwebsite-20"
+      },
+      {
+        "key": "whisk",
+        "name": "Stainless steel whisks, 8 and 10 inch",
+        "url": "https://www.amazon.ca/dp/B0DRVSH3JP?tag=bbcwebsite-20"
+      },
+      {
+        "key": "turner",
+        "name": "Cuisinart stainless steel turner",
+        "url": "https://www.amazon.ca/dp/B0CV4XBKKH?tag=bbcwebsite-20"
+      },
+      {
+        "key": "saucepan",
+        "name": "Starfrit The Rock saucepan",
+        "url": "https://www.amazon.ca/dp/B0D1YRBRY4?tag=bbcwebsite-20"
+      },
+      {
+        "key": "ladle",
+        "name": "Cuisinart stainless steel ladle",
+        "url": "https://www.amazon.ca/dp/B0CV4XMX3S?tag=bbcwebsite-20"
+      },
+      {
+        "key": "thermometer",
+        "name": "Instant-read meat thermometer",
+        "url": "https://www.amazon.ca/dp/B0F6F4W5JW?tag=bbcwebsite-20"
+      }
+    ],
+    "published_at": "2026-11-21T18:06:03-05:00",
+    "pin_dates": {}
+  },
+  {
     "id": "2026-11-20",
     "date": "2026-11-20",
     "dish": "Copycat KFC Famous Bowl: Leftover Turkey Edition (Popcorn Turkey, Mash, Corn, Gravy & Cheese)",
@@ -784,7 +870,8 @@
     ],
     "published_at": "2026-11-15T23:37:57-05:00",
     "pin_dates": {
-      "2": "2026-11-18T12:05:42-05:00"
+      "2": "2026-11-18T12:05:42-05:00",
+      "3": "2026-11-21T18:06:08-05:00"
     }
   },
   {
