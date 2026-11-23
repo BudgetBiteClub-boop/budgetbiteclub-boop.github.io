@@ -540,3 +540,13 @@ section { padding: 72px 0; }
 .pl-acts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 @media (max-width: 560px) { .pl-dinner summary { grid-template-columns: 1fr auto; } .pl-day { grid-column: 1 / -1; } }
 @media print { .pl-acts, .rb-store, #pf, .rb-top, .nl-box { display: none !important; } .pl-dinner { break-inside: avoid; } }
+
+/* Sign in with Google bar (saved pantry and plans, Nov 22) */
+.acct { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 18px 0 0; padding: 10px 14px; border: 1px solid var(--line); border-radius: var(--r-lg); background: #fff; font-size: .9rem; }
+.acct[hidden] { display: none; }
+.acct-who { font-weight: 600; }
+.acct-ok { color: var(--green, #16a34a); }
+.acct-ok::before { content: "\2713  "; }
+.acct-pitch { flex: 1 1 220px; }
+.acct-link { border: 0; background: none; padding: 0; font: inherit; color: inherit; text-decoration: underline; cursor: pointer; opacity: .75; }
+.acct-g { min-height: 32px; }
