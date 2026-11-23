@@ -1,5 +1,88 @@
 [
   {
+    "id": "2026-11-23",
+    "date": "2026-11-23",
+    "dish": "Crispy-Edged Skillet Stuffing (No More Soggy Stuffing)",
+    "format": "Mistake Monday",
+    "theme": "Friendsgiving & Holiday Sides for $5",
+    "hook": "CRISPY-EDGED SKILLET STUFFING",
+    "cost": "$4.35",
+    "servings": 4,
+    "minutes": 18,
+    "caption": "Crispy-edged skillet stuffing, no more soggy mush, $1.09 a serving.\nThe fix: toast the bread in butter first, measure the broth, then hands off. $4.35 total, serves 4, 18 minutes.\n\nIngredients: 340 g day-old white bread (half a loaf), 4 tbsp butter, 1 onion, 2 celery ribs, 1 tsp poultry seasoning, 1 chicken bouillon cube + 300 ml hot water, salt & pepper.",
+    "hashtags": [
+      "stuffing",
+      "thanksgivingrecipes",
+      "skilletstuffing",
+      "crispystuffing",
+      "thanksgivingsides",
+      "budgetcooking",
+      "cheapeats",
+      "cookinghacks",
+      "cookingmistakes",
+      "easysidedish"
+    ],
+    "ingredients": [
+      "340 g day-old white bread (about half a 675 g loaf, 9-10 slices), cut into 2 cm cubes",
+      "4 tbsp (56 g) butter, divided",
+      "1 medium onion (about 150 g), diced",
+      "2 celery ribs, diced",
+      "1 tsp poultry seasoning (or dried sage)",
+      "1 chicken bouillon cube dissolved in 300 ml (1 1/4 cups) hot water",
+      "Salt and black pepper to taste"
+    ],
+    "steps": [
+      "Boil the kettle and dissolve the bouillon cube in 300 ml hot water. Cut the bread into 2 cm cubes (fresh bread is fine; the toasting step dries it out). About 2 minutes.",
+      "Melt 2 tbsp butter in a 12-inch skillet over medium heat. Add the bread cubes, toss to coat, and toast 5-6 minutes, stirring every minute or so, until golden and dry on the outside. Tip them into a bowl.",
+      "In the same skillet, melt 1 tbsp butter. Add the onion, celery and a pinch of salt and cook 4-5 minutes until soft and translucent. Stir in the poultry seasoning for 30 seconds until fragrant.",
+      "Return the toasted bread to the skillet. Pour the broth evenly over the top in two additions, folding gently after each, until every cube is moistened but there is no liquid pooling in the pan. Press everything into an even layer with a spatula.",
+      "Dot the top with the last 1 tbsp butter. Cook undisturbed over medium heat for 4-5 minutes until the bottom is deep golden and crisp (lift an edge to check).",
+      "Flip in sections with a spatula and cook 2-3 minutes more to crisp the second side. Season with pepper and more salt if needed, then serve hot."
+    ],
+    "images": [
+      "recipes/2026-11-23/1.jpg",
+      "recipes/2026-11-23/2.jpg",
+      "recipes/2026-11-23/3.jpg",
+      "recipes/2026-11-23/4.jpg",
+      "recipes/2026-11-23/5.jpg"
+    ],
+    "youtube": "https://youtube.com/shorts/6C1xMDHdSVA",
+    "gear": [
+      {
+        "key": "skillet_stainless",
+        "name": "T-fal 12-inch stainless steel skillet",
+        "url": "https://www.amazon.ca/dp/B087VL2PDR?tag=bbcwebsite-20"
+      },
+      {
+        "key": "chef_knife",
+        "name": "Cuisinart 8-inch chef's knife",
+        "url": "https://www.amazon.ca/dp/B0D5ST1BD2?tag=bbcwebsite-20"
+      },
+      {
+        "key": "cutting_board",
+        "name": "Farberware bamboo cutting board",
+        "url": "https://www.amazon.ca/dp/B0002TU482?tag=bbcwebsite-20"
+      },
+      {
+        "key": "turner",
+        "name": "Cuisinart stainless steel turner",
+        "url": "https://www.amazon.ca/dp/B0CV4XBKKH?tag=bbcwebsite-20"
+      },
+      {
+        "key": "wooden_spoon",
+        "name": "Wooden cooking utensil set",
+        "url": "https://www.amazon.ca/dp/B0BYZDBPGL?tag=bbcwebsite-20"
+      },
+      {
+        "key": "mixing_bowls",
+        "name": "KitchenAid nesting mixing bowls",
+        "url": "https://www.amazon.ca/dp/B0C3MXN4VD?tag=bbcwebsite-20"
+      }
+    ],
+    "published_at": "2026-11-23T18:10:25-05:00",
+    "pin_dates": {}
+  },
+  {
     "id": "2026-11-22",
     "date": "2026-11-22",
     "dish": "Copycat Taco Bell Quesadilla: Leftover Turkey Edition (12-Minute Speedrun)",
@@ -170,7 +253,9 @@
       }
     ],
     "published_at": "2026-11-21T18:06:03-05:00",
-    "pin_dates": {}
+    "pin_dates": {
+      "2": "2026-11-23T18:10:29-05:00"
+    }
   },
   {
     "id": "2026-11-20",
@@ -347,7 +432,8 @@
     ],
     "published_at": "2026-11-19T18:06:35-05:00",
     "pin_dates": {
-      "2": "2026-11-22T18:10:32-05:00"
+      "2": "2026-11-22T18:10:32-05:00",
+      "3": "2026-11-23T18:10:29-05:00"
     }
   },
   {
