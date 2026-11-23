@@ -17,6 +17,7 @@
   ],
   "shortcuts": [
     {"name": "Make a $5 recipe", "url": "/recipe-builder.html?source=app-shortcut"},
+    {"name": "Plan my $5 week", "url": "/planner.html?source=app-shortcut"},
     {"name": "All recipes", "url": "/recipes.html?source=app-shortcut"}
   ]
 }

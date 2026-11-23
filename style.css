@@ -520,3 +520,23 @@ section { padding: 72px 0; }
 .rb-install p { margin: 0; flex: 1; font-size: .92rem; line-height: 1.4; }
 .rb-install-x { flex: none; border: 0; background: none; font-size: 1.4rem; line-height: 1; padding: 4px 6px; cursor: pointer; color: inherit; opacity: .6; }
 @media (max-width: 520px) { .rb-install { flex-wrap: wrap; } .rb-install p { flex-basis: calc(100% - 100px); } }
+
+/* Weekly Meal Planner (planner.html, Nov 22) */
+.pl-switch { margin-top: 18px; font-size: .95rem; }
+.pl-lbl { display: block; margin: 16px 0 6px; font-weight: 600; }
+.pl-lbl span { font-weight: 400; opacity: .7; }
+.pl-in { width: 100%; box-sizing: border-box; padding: 12px 14px; border: 1px solid var(--line); border-radius: var(--r-md, 12px); font: inherit; background: #fff; }
+#pf .rb-row { flex-wrap: wrap; gap: 14px 22px; }
+.pl-body { display: grid; gap: 28px; }
+.pl-aisle { margin: 18px 0 6px; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+.pl-dinner { border: 1px solid var(--line); border-radius: var(--r-lg); margin: 0 0 10px; background: #fff; }
+.pl-dinner summary { list-style: none; cursor: pointer; padding: 14px 16px; display: grid; grid-template-columns: auto 1fr auto; gap: 4px 12px; align-items: baseline; }
+.pl-dinner summary::-webkit-details-marker { display: none; }
+.pl-dinner[open] summary { border-bottom: 1px solid var(--line); }
+.pl-day { font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--green, #16a34a); }
+.pl-meta { font-size: .85rem; opacity: .75; white-space: nowrap; }
+.pl-why { margin: 12px 16px 0; font-size: .92rem; opacity: .85; }
+.pl-dinner .rb-steps { padding: 4px 16px 14px; }
+.pl-acts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+@media (max-width: 560px) { .pl-dinner summary { grid-template-columns: 1fr auto; } .pl-day { grid-column: 1 / -1; } }
+@media print { .pl-acts, .rb-store, #pf, .rb-top, .nl-box { display: none !important; } .pl-dinner { break-inside: avoid; } }
