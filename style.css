@@ -512,3 +512,11 @@ section { padding: 72px 0; }
 .rb-open::after { background: radial-gradient(130% 90% at 50% 42%, rgba(15,46,27,.42), rgba(15,46,27,.86) 78%); }
 @media (max-width: 899px) { .rb-open-bg { opacity: .7; } }
 .rb-open-in { padding-bottom: 130px; } .rb-open-swipe { bottom: 40px; }
+
+/* "Add to home screen" card on the Recipe Builder (installable app, Nov 22) */
+.rb-install { display: flex; align-items: center; gap: 12px; margin: 22px 0 0; padding: 12px 14px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--gold-soft); }
+.rb-install[hidden] { display: none; }
+.rb-install img { border-radius: 11px; flex: none; }
+.rb-install p { margin: 0; flex: 1; font-size: .92rem; line-height: 1.4; }
+.rb-install-x { flex: none; border: 0; background: none; font-size: 1.4rem; line-height: 1; padding: 4px 6px; cursor: pointer; color: inherit; opacity: .6; }
+@media (max-width: 520px) { .rb-install { flex-wrap: wrap; } .rb-install p { flex-basis: calc(100% - 100px); } }
