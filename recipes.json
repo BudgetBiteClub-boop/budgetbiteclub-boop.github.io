@@ -1,5 +1,91 @@
 [
   {
+    "id": "2026-11-25",
+    "date": "2026-11-25",
+    "dish": "Rotisserie-Style Skillet Chicken Thighs: Mini Thanksgiving Dinner for 2 (with Butter-Crisped Potatoes, Glazed Carrots and Pan Gravy)",
+    "format": "Takeout Copycat",
+    "theme": "Friendsgiving & Holiday Sides for $5",
+    "hook": "MINI THANKSGIVING FOR TWO",
+    "cost": "$4.60",
+    "servings": 2,
+    "minutes": 20,
+    "caption": "Two chicken thighs, two potatoes and two carrots became a full mini Thanksgiving dinner: rotisserie-style chicken, butter-crisped potatoes, glazed carrots and pan gravy, $2.30 a plate.\n20 minutes, $4.60 for 2, vs about $45 for two delivered rotisserie dinners.\n\nIngredients: 300 g potatoes, 150 g carrots, 250 g boneless skinless chicken thighs, rub (1 tsp paprika, 1/2 tsp each garlic powder, onion powder, thyme, salt, sugar, 1/4 tsp pepper), 1 tbsp canola oil, 1 tbsp butter, 1 tsp sugar, 1 tsp flour, 1/2 chicken bouillon cube in 3/4 cup hot water",
+    "hashtags": [
+      "thanksgivingdinner",
+      "friendsgiving",
+      "copycatrecipe",
+      "rotisseriechicken",
+      "chickenthighs",
+      "budgetmeals",
+      "cheapeats",
+      "dinnerfortwo",
+      "pangravy",
+      "glazedcarrots"
+    ],
+    "ingredients": [
+      "300 g potatoes (2 medium), cut in 2 cm cubes",
+      "150 g carrots (2 medium), sliced into 1 cm coins",
+      "2 tbsp water (for microwaving the vegetables)",
+      "250 g boneless skinless chicken thighs (2 thighs)",
+      "Rotisserie rub: 1 tsp paprika, 1/2 tsp garlic powder, 1/2 tsp onion powder, 1/2 tsp dried thyme, 1/2 tsp salt, 1/4 tsp black pepper, 1/2 tsp sugar",
+      "1 tbsp canola oil",
+      "1 tbsp butter",
+      "1 tsp sugar (for the carrot glaze)",
+      "1 tsp all-purpose flour",
+      "1/2 chicken bouillon cube dissolved in 3/4 cup hot water"
+    ],
+    "steps": [
+      "Put the cubed potatoes and carrot coins in a microwave-safe bowl with 2 tbsp water. Cover with a plate and microwave on high for 6 minutes, until a fork just slides in. Drain.",
+      "While that runs, pat the chicken thighs very dry with paper towel. Mix the rotisserie rub and press it all over both sides.",
+      "Heat 1 tbsp canola oil in a large skillet over medium-high heat until it shimmers. Lay the thighs in smooth side down and leave them alone for 5-6 minutes until deep brown. Flip and cook 5 more minutes, until the thickest part reads 74°C (165°F). Move the chicken to a plate to rest.",
+      "Lower the heat to medium. Add the butter to the same pan, then the drained potatoes and carrots in one layer. Fry 4 minutes, turning once, until golden. Sprinkle 1 tsp sugar over the carrots for the last minute so they glaze, then spoon the vegetables onto two plates.",
+      "Sprinkle 1 tsp flour into the pan drippings and stir 30 seconds. Whisk in the bouillon water, scraping up the browned bits, and simmer 1-2 minutes until it coats a spoon.",
+      "Slice or leave the thighs whole, set one on each plate with the potatoes and carrots, and pour the hot gravy over the chicken."
+    ],
+    "images": [
+      "recipes/2026-11-25/1.jpg",
+      "recipes/2026-11-25/2.jpg",
+      "recipes/2026-11-25/3.jpg",
+      "recipes/2026-11-25/4.jpg",
+      "recipes/2026-11-25/5.jpg"
+    ],
+    "youtube": "https://youtube.com/shorts/c2AvReWFbAM",
+    "gear": [
+      {
+        "key": "skillet_stainless",
+        "name": "T-fal 12-inch stainless steel skillet",
+        "url": "https://www.amazon.ca/dp/B087VL2PDR?tag=bbcwebsite-20"
+      },
+      {
+        "key": "tongs",
+        "name": "Kitchen tongs with silicone tips (2-pack)",
+        "url": "https://www.amazon.ca/dp/B074WB5D79?tag=bbcwebsite-20"
+      },
+      {
+        "key": "thermometer",
+        "name": "Instant-read meat thermometer",
+        "url": "https://www.amazon.ca/dp/B0F6F4W5JW?tag=bbcwebsite-20"
+      },
+      {
+        "key": "whisk",
+        "name": "Stainless steel whisks, 8 and 10 inch",
+        "url": "https://www.amazon.ca/dp/B0DRVSH3JP?tag=bbcwebsite-20"
+      },
+      {
+        "key": "chef_knife",
+        "name": "Cuisinart 8-inch chef's knife",
+        "url": "https://www.amazon.ca/dp/B0D5ST1BD2?tag=bbcwebsite-20"
+      },
+      {
+        "key": "cutting_board",
+        "name": "Farberware bamboo cutting board",
+        "url": "https://www.amazon.ca/dp/B0002TU482?tag=bbcwebsite-20"
+      }
+    ],
+    "published_at": "2026-11-25T18:05:11-05:00",
+    "pin_dates": {}
+  },
+  {
     "id": "2026-11-24",
     "date": "2026-11-24",
     "dish": "Steakhouse-Style Garlic Mashed Potatoes & Gravy ($5 vs $50 Steakhouse Sides)",
