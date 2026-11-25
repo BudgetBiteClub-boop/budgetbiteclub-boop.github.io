@@ -102,7 +102,7 @@ function render(p,saved){
   update();body.appendChild(s1);body.appendChild(s2);card.appendChild(body);
   card.appendChild(el('p','rb-fine','Plans are written by AI (Claude) and haven\'t been tested in our kitchen. Prices are estimates for the amounts used and will differ from what you pay. Follow safe cooking temperatures and check labels for allergies. Your plan and pantry are kept only in this browser.'));
   show(card);if(!saved){out.scrollIntoView({behavior:'smooth',block:'start'});h.focus({preventScroll:true});}}
-function skeleton(){var s=el('div','rb-skel');s.setAttribute('role','status');s.appendChild(el('p',null,'Planning your week and pricing it out… this usually takes 20 to 40 seconds.'));for(var i=0;i<6;i++)s.appendChild(el('i'));return s;}
+function skeleton(){var s=el('div','rb-skel');s.setAttribute('role','status');s.appendChild(el('p',null,'Planning your week and pricing it out… this usually takes 30 to 60 seconds.'));for(var i=0;i<6;i++)s.appendChild(el('i'));return s;}
 f.addEventListener('submit',function(e){e.preventDefault();
   var tok=(f.querySelector('[name="cf-turnstile-response"]')||{}).value||'';if(!tok){err('Please tick the "Verify you are human" box first.');return;}
   var dn=pick('dinners','5'),sv=pick('pservings','2');try{localStorage.setItem(PANTRY,ph.value.trim());}catch(e){}

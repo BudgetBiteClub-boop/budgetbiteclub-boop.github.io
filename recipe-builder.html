@@ -215,7 +215,7 @@ function render(r,opt){
   show(card);h.focus({preventScroll:true});
 }
 function skeleton(){var s=el('div','rb-skel');s.setAttribute('role','status');
-  s.appendChild(el('p',null,'Pricing out your recipe… this usually takes 5 to 15 seconds.'));
+  s.appendChild(el('p',null,'Pricing out your recipe… this usually takes 10 to 20 seconds.'));
   for(var i=0;i<5;i++)s.appendChild(el('i'));return s;}
 f.addEventListener('submit',function(e){
   e.preventDefault();
