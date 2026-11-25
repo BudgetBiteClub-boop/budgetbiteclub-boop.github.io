@@ -13,28 +13,28 @@
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
   .feed-top { padding: 28px 0 8px; text-align: center; }
-  .feed-top h1 { color: var(--green-dark); font-size: clamp(1.9rem, 5vw, 2.6rem); margin-bottom: 4px; }
+  .feed-top h1 { color: var(--green-dark); font-size: clamp(2.2rem, 6vw, 3.2rem); line-height: 1.05; margin-bottom: 8px; }
   .feed-top p { color: var(--muted); margin: 0 0 18px; }
-  .tools { position: sticky; top: 61px; z-index: 5; background: rgba(255,250,240,.95); backdrop-filter: blur(8px); padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .tools { position: sticky; top: 61px; z-index: 5; background: rgba(251,246,236,.94); backdrop-filter: blur(8px); padding: 10px 0; border-bottom: 1px solid var(--line); }
   .tools .wrap { max-width: 560px; }
-  .search { width: 100%; padding: 12px 16px; border-radius: 999px; border: 1px solid var(--line); font: inherit; background: #fff; }
+  .search { width: 100%; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--line); font: inherit; background: #fff; }
   .filters { display: flex; gap: 8px; overflow-x: auto; padding-top: 10px; scrollbar-width: none; }
   .filters::-webkit-scrollbar { display: none; }
   .filter { flex: none; border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 7px 14px; font: 600 .88rem "Inter", sans-serif; cursor: pointer; color: var(--ink); }
   .filter.on { background: var(--green-dark); border-color: var(--green-dark); color: #fff; }
 
   .feed { width: min(560px, 100% - 24px); margin: 18px auto 60px; display: flex; flex-direction: column; gap: 22px; }
-  .post { background: #fff; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; box-shadow: 0 6px 22px rgba(20,83,45,.07); scroll-margin-top: 140px; }
+  .post { background: #fff; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-sm); scroll-margin-top: 140px; }
   .post-head { display: flex; align-items: center; gap: 10px; padding: 12px 14px; }
   .post-head img { width: 38px; height: 38px; border-radius: 50%; }
   .post-head .who { line-height: 1.2; }
   .post-head b { font-size: .95rem; }
   .post-head small { color: var(--muted); display: block; font-size: .8rem; }
-  .post-head .fmt { margin-left: auto; background: var(--green-soft); color: var(--green-dark); font: 700 .75rem "Inter", sans-serif; padding: 5px 10px; border-radius: 999px; white-space: nowrap; }
+  .post-head .fmt { margin-left: auto; background: none; color: var(--green); font: 700 .7rem "Inter", sans-serif; letter-spacing: .12em; text-transform: uppercase; padding: 0; white-space: nowrap; }
 
   .carousel { position: relative; }
   .slides { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; aspect-ratio: 4 / 5; background: #111; }
@@ -43,7 +43,7 @@
   .dots { position: absolute; bottom: 10px; left: 0; right: 0; display: flex; justify-content: center; gap: 6px; pointer-events: none; }
   .dots i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.55); }
   .dots i.on { background: #fff; }
-  .badge { position: absolute; top: 12px; left: 12px; background: var(--green); color: #fff; font: 800 1.05rem "Poppins", sans-serif; padding: 6px 12px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,.25); }
+  .badge { position: absolute; top: 12px; left: 12px; background: var(--gold); color: var(--green-dark); font: 500 1.05rem var(--mono); padding: 7px 12px; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,.25); }
   .nav-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border-radius: 50%; border: 0; background: rgba(255,255,255,.85); font-size: 1.1rem; cursor: pointer; display: grid; place-items: center; }
   .nav-btn.prev { left: 8px; } .nav-btn.next { right: 8px; }
   @media (hover: none) { .nav-btn { display: none; } }
@@ -54,11 +54,11 @@
   .act.liked { color: #e11d48; }
   .act-yt { margin-left: auto; font: 700 .85rem "Inter", sans-serif; color: #fff; background: var(--yt); padding: 8px 12px; border-radius: 999px; text-decoration: none; }
   .post-body { padding: 4px 16px 16px; }
-  .post-body h2 { font-size: 1.25rem; color: var(--green-dark); margin: 4px 0 8px; }
+  .post-body h2 { font-size: 1.4rem; line-height: 1.2; color: var(--green-dark); margin: 4px 0 8px; }
   .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
-  .meta span { background: #f3f4f6; border-radius: 999px; padding: 4px 10px; font-size: .82rem; font-weight: 600; }
+  .meta span { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 4px 10px; font-size: .82rem; font-weight: 600; }
   .caption { white-space: pre-line; margin: 0 0 8px; }
-  .tags { color: #2563eb; font-size: .9rem; margin: 0 0 10px; word-spacing: 4px; }
+  .tags { color: var(--green); font-size: .9rem; margin: 0 0 10px; word-spacing: 4px; }
   details { border-top: 1px solid var(--line); padding: 10px 0 0; margin-top: 10px; }
   summary { cursor: pointer; font-weight: 700; color: var(--green-dark); }
   details ul, details ol { margin: 8px 0 4px; padding-left: 22px; }
@@ -69,25 +69,12 @@
 </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="index.html"><img src="profile.png" alt="">Budget Bite Club</a>
-    <nav class="nav" aria-label="Main">
-      <a href="index.html">Home</a>
-      <a href="recipes.html">Recipe Feed</a>
-      <a href="recipe-builder.html">Recipe Builder</a>
-      <a href="kit.html">Kitchen Gear</a>
-      <a href="links.html">Links</a>
-      <a href="index.html#follow">Follow</a>
-    </nav>
-    <a class="btn btn-green" href="index.html#follow" style="padding:9px 16px;font-size:.92rem">Join the Club</a>
-  </div>
-</header>
+<header class="site-header"><div class="wrap"><a class="brand" href="index.html"><img src="profile.png" alt="" width="40" height="40">Budget Bite Club</a><nav class="nav" aria-label="Main"><a href="recipes.html" aria-current="page">Recipes</a><a href="recipe-builder.html">Recipe Builder</a><a href="planner.html">Meal Planner</a><a href="kit.html">Kitchen Gear</a><a href="links.html">Links</a></nav><a class="btn btn-green btn-sm" href="index.html#join">Join the Club</a></div></header>
 
 <div class="feed-top">
   <div class="wrap">
     <h1>The Recipe Feed</h1>
-    <p>Every Budget Bite Club recipe, $5 or less. New ones added every day.</p><p style="font-size:.85rem;color:#6b7280">Prices are estimates and may differ from what you pay.</p>
+    <p>Every Budget Bite Club recipe, $5 or less. New ones added every day.</p><p style="font-size:.85rem;color:var(--muted)">Prices are estimates and may differ from what you pay.</p>
   </div>
 </div>
 <div class="tools">
@@ -102,12 +89,7 @@
 <script src="newsletter.js" defer></script>
 <div class="toast" role="status"></div>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div>&copy; 2026 Budget Bite Club. Videos use AI-generated visuals and narration and are labeled as such. As an Amazon Associate I earn from qualifying purchases. *Prices are estimates based on typical Canadian grocery prices for the amounts used. What you pay will vary by store, location, brand, sale and date.</div>
-    <div class="links"><a href="index.html">Home</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
-  </div>
-</footer>
+<footer class="site-footer"><div class="wrap"><div><div class="brandline">Budget Bite Club</div><div class="fine">&copy; 2026 Budget Bite Club. Our videos use AI-generated visuals and narration and are labeled as such, and the food photos on this site are AI-generated. As an Amazon Associate I earn from qualifying purchases. *Prices are estimates based on typical Canadian grocery prices for the amounts used. What you pay will vary by store, location, brand, sale and date.</div></div><nav class="links" aria-label="Footer"><a href="recipes.html">Recipe Feed</a><a href="recipe-builder.html">Recipe Builder</a><a href="planner.html">Meal Planner</a><a href="kit.html">Kitchen Gear</a><a href="links.html">Links</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:clipped1919@gmail.com">Contact</a></nav></div></footer>
 
 <script>
 (function () {

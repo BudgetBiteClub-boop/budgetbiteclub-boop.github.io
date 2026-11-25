@@ -38,7 +38,7 @@ body {
 }
 img { max-width: 100%; display: block; }
 a { color: var(--green); text-underline-offset: 3px; }
-h1, h2, h3 { font-family: "Poppins", "Inter", sans-serif; line-height: 1.15; margin: 0 0 .5em; letter-spacing: -.01em; }
+h1, h2, h3 { font-family: var(--serif); line-height: 1.15; margin: 0 0 .5em; letter-spacing: -.01em; }
 .wrap { width: min(1120px, 100% - 32px); margin-inline: auto; }
 :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -59,7 +59,7 @@ h1, h2, h3 { font-family: "Poppins", "Inter", sans-serif; line-height: 1.15; mar
   border-bottom: 1px solid var(--line);
 }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 0; }
-.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--green-dark); font: 800 1.15rem "Poppins", sans-serif; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--green-dark); font: 800 1.15rem var(--serif); }
 .brand img { width: 40px; height: 40px; border-radius: 50%; }
 .brand { flex: none; }
 .nav { display: flex; gap: 22px; min-width: 0; }
@@ -127,7 +127,7 @@ h1, h2, h3 { font-family: "Poppins", "Inter", sans-serif; line-height: 1.15; mar
 .price-badge {
   position: absolute; left: 34%; bottom: 10px; z-index: 2;
   background: var(--green); color: #fff; border-radius: 16px; padding: 12px 18px;
-  font: 800 1.4rem "Poppins", sans-serif; box-shadow: var(--shadow); transform: rotate(-3deg);
+  font: 800 1.4rem var(--serif); box-shadow: var(--shadow); transform: rotate(-3deg);
 }
 .price-badge small { display: block; font: 600 .75rem "Inter", sans-serif; opacity: .9; }
 @media (max-width: 860px) {
@@ -138,7 +138,7 @@ h1, h2, h3 { font-family: "Poppins", "Inter", sans-serif; line-height: 1.15; mar
 /* ---------- stats ---------- */
 .stats { background: var(--green-dark); color: #fff; }
 .stats .wrap { display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; padding: 22px 0; gap: 12px; }
-.stats b { display: block; font: 800 1.7rem "Poppins", sans-serif; color: var(--gold); }
+.stats b { display: block; font: 800 1.7rem var(--serif); color: var(--gold); }
 .stats span { font-size: .95rem; opacity: .9; }
 
 /* ---------- sections ---------- */
@@ -245,7 +245,7 @@ section { padding: 72px 0; }
 .promo .demo .q { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 700; }
 .promo .demo .in { font-weight: 700; margin: 2px 0 10px; }
 .promo .demo .out { background: var(--gold-soft); border-radius: var(--r-sm); padding: 10px 14px; }
-.promo .demo .out b { display: block; font: 800 1.1rem "Poppins", sans-serif; color: var(--green-dark); }
+.promo .demo .out b { display: block; font: 800 1.1rem var(--serif); color: var(--green-dark); }
 .promo .demo .out span { color: var(--muted); font-size: .9rem; }
 .promo .week-list { list-style: none; margin: 6px 0 0; padding: 0; }
 .promo .week-list li { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0;
@@ -258,7 +258,7 @@ section { padding: 72px 0; }
 /* ---------- footer ---------- */
 .site-footer { padding: 40px 0; }
 .site-footer .wrap { align-items: flex-start; }
-.site-footer .brandline { font: 800 1.05rem "Poppins", sans-serif; color: #fff; margin-bottom: 6px; }
+.site-footer .brandline { font: 800 1.05rem var(--serif); color: #fff; margin-bottom: 6px; }
 .site-footer .fine { max-width: 62ch; color: #94a3b8; font-size: .85rem; line-height: 1.55; }
 .site-footer .links a { text-decoration: none; font-weight: 600; }
 .site-footer .links a:hover { text-decoration: underline; }
@@ -277,7 +277,7 @@ section { padding: 72px 0; }
 .kit-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
 .kit-item { display: flex; flex-direction: column; gap: 8px; background: var(--card); border: 1px solid var(--line);
   border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow-sm); }
-.kit-item b { font-family: "Poppins", sans-serif; font-size: 1.02rem; line-height: 1.3; }
+.kit-item b { font-family: var(--serif); font-size: 1.02rem; line-height: 1.3; }
 .kit-item p { margin: 0; color: var(--muted); font-size: .93rem; flex: 1; }
 .kit-item .used { align-self: flex-start; background: var(--green-soft); color: var(--green-dark); font-size: .75rem;
   font-weight: 800; border-radius: 999px; padding: 3px 10px; }
@@ -342,11 +342,11 @@ section { padding: 72px 0; }
 .rb-how { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; counter-reset: s; }
 .rb-how li { display: flex; gap: 14px; align-items: flex-start; counter-increment: s; }
 .rb-how li::before { content: counter(s); flex: none; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center;
-  background: var(--gold); color: var(--green-dark); font: 800 .95rem "Poppins", sans-serif; }
+  background: var(--gold); color: var(--green-dark); font: 800 .95rem var(--serif); }
 .rb-how b { display: block; }
 .rb-how span { color: var(--muted); font-size: .95rem; }
 .rb-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg); padding: clamp(18px, 3.5vw, 28px); box-shadow: var(--shadow); }
-.rb-card label.big { display: block; font: 700 1.1rem "Poppins", sans-serif; color: var(--green-dark); margin-bottom: 10px; }
+.rb-card label.big { display: block; font: 700 1.1rem var(--serif); color: var(--green-dark); margin-bottom: 10px; }
 .rb-field { position: relative; }
 .rb-card textarea { width: 100%; min-height: 120px; font: inherit; line-height: 1.5; color: var(--ink); padding: 14px 16px 28px;
   border: 1.5px solid #ddd5c2; border-radius: 14px; background: #fffdf8; resize: vertical; transition: border-color .15s, box-shadow .15s; }
@@ -368,7 +368,7 @@ section { padding: 72px 0; }
 .seg input:focus-visible + label { outline: 3px solid var(--gold); outline-offset: 1px; }
 .rb-limit { font-size: .82rem; color: var(--muted); }
 .cf-turnstile { margin-top: 16px; min-height: 65px; }
-.rb-go { width: 100%; justify-content: center; margin-top: 14px; padding: 15px 20px; font: 800 1.05rem "Poppins", sans-serif; background: var(--green); }
+.rb-go { width: 100%; justify-content: center; margin-top: 14px; padding: 15px 20px; font: 800 1.05rem var(--serif); background: var(--green); }
 .rb-go:disabled { opacity: .7; cursor: progress; transform: none; box-shadow: none; }
 .rb-out { margin-top: 40px; scroll-margin-top: 90px; }
 .rb-msg { border-radius: 14px; padding: 14px 16px; font-weight: 600; max-width: 720px; margin: 0 auto; }
@@ -387,7 +387,7 @@ section { padding: 72px 0; }
 .rb-head h2 { font-size: clamp(1.5rem, 3.6vw, 2.2rem); color: var(--green-dark); margin: 0 0 18px; }
 .rb-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
 .rb-facts div { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; }
-.rb-facts b { display: block; font: 800 1.25rem "Poppins", sans-serif; color: var(--green-dark); }
+.rb-facts b { display: block; font: 800 1.25rem var(--serif); color: var(--green-dark); }
 .rb-facts div:first-child b { color: var(--green); }
 .rb-facts span { font-size: .8rem; color: var(--muted); }
 .rb-body { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
@@ -403,10 +403,10 @@ section { padding: 72px 0; }
 .pill { display: inline-block; margin-left: 6px; font-size: .68rem; font-weight: 800; border-radius: 999px; padding: 2px 8px; vertical-align: 1px; }
 .pill.have { background: var(--green-soft); color: var(--green-dark); }
 .pill.buy { background: var(--gold-soft); color: #7a5a00; }
-.rb-total { display: flex; justify-content: space-between; padding: 14px 0 4px; font: 800 1.05rem "Poppins", sans-serif; color: var(--green-dark); }
+.rb-total { display: flex; justify-content: space-between; padding: 14px 0 4px; font: 800 1.05rem var(--serif); color: var(--green-dark); }
 .rb-note { font-size: .86rem; color: var(--muted); margin: 6px 0 0; }
 .rb-shop { margin-top: 22px; background: var(--cream); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
-.rb-shop h4 { margin: 0 0 6px; font: 700 .98rem "Poppins", sans-serif; color: var(--green-dark); }
+.rb-shop h4 { margin: 0 0 6px; font: 700 .98rem var(--serif); color: var(--green-dark); }
 .rb-shop ul { margin: 0 0 10px; padding-left: 18px; font-size: .93rem; }
 .rb-steps { list-style: none; margin: 0; padding: 0; counter-reset: st; }
 .rb-steps li { counter-increment: st; }
@@ -414,7 +414,7 @@ section { padding: 72px 0; }
   padding: 10px 6px; margin: 0 -6px; border-radius: 12px; font: inherit; color: inherit; cursor: pointer; transition: background-color .15s; }
 .rb-steps button:hover { background: var(--cream); }
 .rb-steps button::before { content: counter(st); width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center;
-  background: var(--green-soft); color: var(--green-dark); font: 800 .9rem "Poppins", sans-serif; }
+  background: var(--green-soft); color: var(--green-dark); font: 800 .9rem var(--serif); }
 .rb-steps button[aria-pressed="true"] { color: var(--muted); text-decoration: line-through; }
 .rb-steps button[aria-pressed="true"]::before { content: "\2713"; background: var(--green); color: #fff; }
 .rb-call { border-radius: 14px; padding: 12px 14px; margin: 16px 0 0; font-size: .93rem; }
@@ -422,7 +422,7 @@ section { padding: 72px 0; }
 .rb-call.tip { background: var(--gold-soft); } .rb-call.tip b { color: #7a5a00; }
 .rb-call.safe { background: var(--green-soft); } .rb-call.safe b { color: var(--green-dark); }
 .rb-gear { margin-top: 20px; }
-.rb-gear h4 { margin: 0 0 8px; font: 700 .98rem "Poppins", sans-serif; color: var(--green-dark); }
+.rb-gear h4 { margin: 0 0 8px; font: 700 .98rem var(--serif); color: var(--green-dark); }
 .rb-gear a { display: inline-flex; align-items: center; gap: 6px; margin: 0 8px 8px 0; padding: 7px 13px; border-radius: 999px;
   background: #fff; border: 1px solid var(--line); color: var(--green-dark); font-weight: 700; font-size: .86rem; text-decoration: none; }
 .rb-gear a:hover { border-color: var(--green); }
@@ -460,7 +460,7 @@ section { padding: 72px 0; }
 .rb-head h2:focus { outline: none; }
 /* Recipe Builder: "Email me this recipe" */
 .rb-mail { padding: 18px clamp(20px, 4vw, 32px); border-top: 1px solid var(--line); background: var(--gold-soft); }
-.rb-mail-h { display: block; font: 700 1.05rem "Poppins", sans-serif; color: var(--green-dark); margin-bottom: 8px; }
+.rb-mail-h { display: block; font: 700 1.05rem var(--serif); color: var(--green-dark); margin-bottom: 8px; }
 .rb-mail-row { display: flex; flex-wrap: wrap; gap: 8px; }
 .rb-mail-row input { flex: 1 1 220px; min-width: 0; font: inherit; padding: 11px 16px; border: 1.5px solid #ddd5c2; border-radius: 999px; background: #fff; }
 .rb-mail-row input:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 4px rgba(21, 128, 61, .14); }
@@ -477,7 +477,7 @@ section { padding: 72px 0; }
 .rb-ing button.pill:active { transform: scale(.95); }
 .rb-ing li.got .nm, .rb-ing li.got .pr { color: var(--muted); }
 .rb-spend { display: flex; justify-content: space-between; margin-top: 2px; padding: 10px 12px; border-radius: 12px;
-  background: var(--gold-soft); font: 800 1rem "Poppins", sans-serif; color: #7a5a00; }
+  background: var(--gold-soft); font: 800 1rem var(--serif); color: #7a5a00; }
 .rb-mail-sub { margin: -2px 0 10px; font-size: .86rem; color: #5b6472; }
 .rb-join { margin-top: 16px; padding-top: 14px; border-top: 1px dashed #e6d9a8; }
 .rb-join .btn { padding: 10px 18px; font-size: .92rem; }
@@ -485,7 +485,7 @@ section { padding: 72px 0; }
 .rb-mail-done a { color: var(--green); font-weight: 800; }
 /* Recipe Builder: "Shop your list" */
 .rb-store { margin-top: 18px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
-.rb-store h4 { margin: 0 0 8px; font: 700 .98rem "Poppins", sans-serif; color: var(--green-dark); }
+.rb-store h4 { margin: 0 0 8px; font: 700 .98rem var(--serif); color: var(--green-dark); }
 .rb-store-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-bottom: 8px; }
 .rb-store-row label { font-weight: 700; font-size: .9rem; }
 .rb-store-row select { font: inherit; font-size: .95rem; padding: 8px 12px; border: 1.5px solid #ddd5c2; border-radius: 999px; background: var(--cream); color: var(--ink); max-width: 100%; }
@@ -508,17 +508,17 @@ section { padding: 72px 0; }
 .rb-open-in { position: relative; z-index: 1; padding: 32px 22px 96px; max-width: 640px; }
 .rb-open-tag { display: inline-block; background: var(--gold); color: var(--green-dark); font: 800 .78rem "Inter", sans-serif; letter-spacing: .1em;
   border-radius: 999px; padding: 6px 12px; transform: rotate(-3deg); box-shadow: 0 6px 18px rgba(0,0,0,.25); }
-.rb-open-h { font: 800 clamp(2.9rem, 13vw, 5.6rem)/0.98 "Poppins", sans-serif; letter-spacing: -.03em; margin: 18px 0 14px;
+.rb-open-h { font: 800 clamp(2.9rem, 13vw, 5.6rem)/0.98 var(--serif); letter-spacing: -.03em; margin: 18px 0 14px;
   text-shadow: 0 6px 30px rgba(0,0,0,.35); }
 .rb-open-h .eyes { display: inline-block; animation: peek 2.6s ease-in-out infinite; }
 .rb-open-sub { font-size: clamp(1.1rem, 4.6vw, 1.4rem); margin: 0 0 20px; color: #e8f5ec; }
 .rb-open-sub b { color: var(--gold); }
 .rb-tick { position: relative; height: 2.6em; margin: 0 auto 26px; max-width: 420px; }
-.rb-tick span { position: absolute; inset: 0; display: grid; place-items: center; font: 800 1.05rem "Poppins", sans-serif;
+.rb-tick span { position: absolute; inset: 0; display: grid; place-items: center; font: 800 1.05rem var(--serif);
   background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22); border-radius: 999px; backdrop-filter: blur(6px);
   opacity: 0; transform: translateY(10px); transition: opacity .45s var(--ease), transform .45s var(--ease); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 16px; }
 .rb-tick span.on { opacity: 1; transform: none; }
-.rb-open-go { font: 800 1.1rem "Poppins", sans-serif; color: var(--green-dark); background: var(--gold); border: 0; border-radius: 999px;
+.rb-open-go { font: 800 1.1rem var(--serif); color: var(--green-dark); background: var(--gold); border: 0; border-radius: 999px;
   padding: 16px 34px; cursor: pointer; box-shadow: 0 10px 30px rgba(255,211,77,.35); transition: transform .15s var(--ease); }
 .rb-open-go:hover { transform: translateY(-2px) scale(1.02); }
 .rb-open-swipe { position: absolute; left: 50%; bottom: 46px; transform: translateX(-50%); font: 700 .85rem "Inter", sans-serif; color: #cfe8d7;
@@ -572,3 +572,68 @@ section { padding: 72px 0; }
 .acct-pitch { flex: 1 1 220px; }
 .acct-link { border: 0; background: none; padding: 0; font: inherit; color: inherit; text-decoration: underline; cursor: pointer; opacity: .75; }
 .acct-g { min-height: 32px; }
+
+/* ========== Nov 24 redesign: the home page's look on every page ==========
+   Editorial food magazine with price-tag and receipt details: Fraunces headlines, Inter text, DM Mono prices,
+   cream paper, deep green ink, gold kept for prices and small labels. home.css adds the home-page sections. */
+:root {
+  --cream: #fbf6ec; --paper: #fbf6ec; --paper-2: #f4ecdc;
+  --ink: #1d1a16; --ink-2: #4a4339; --muted: #6f675b;
+  --line: #e6dccb; --rule: #e6dccb;
+  --green-dark: #123f25; --green: #16733a; --green-soft: #e6f1e8;
+  --gold: #ffcf3f; --gold-soft: #fff3cf;
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --mono: "DM Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --shadow-sm: 0 1px 0 rgba(0, 0, 0, .02), 0 10px 24px -18px rgba(29, 26, 22, .45);
+  --shadow: 0 20px 40px -28px rgba(29, 26, 22, .5);
+}
+body { background: var(--paper); color: var(--ink); }
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 700; letter-spacing: -.015em; }
+h1 .hl, h2 .hl { background: linear-gradient(transparent 64%, var(--gold) 64%); }
+
+/* header */
+.site-header { background: rgba(251, 246, 236, .9); border-bottom-color: var(--line); }
+.brand { font-family: var(--serif); font-weight: 700; font-size: 1.2rem; color: var(--green-dark); letter-spacing: -.01em; }
+.nav { gap: 28px; }
+.nav a { font-weight: 500; color: var(--ink-2); }
+.nav a:hover { color: var(--green-dark); }
+.nav a[aria-current="page"] { color: var(--green-dark); font-weight: 700; }
+.site-header .btn-green { background: var(--green-dark); }
+
+/* buttons: softer squares instead of pills, deep green first */
+.btn { border-radius: 12px; }
+.site-header .btn { border-radius: 999px; }
+.btn-green { background: var(--green-dark); }
+.btn-gold { background: var(--gold); color: var(--green-dark); }
+.btn-ghost { color: var(--green-dark); box-shadow: inset 0 0 0 1.5px var(--green-dark); background: #fff; }
+.btn-ghost:hover { box-shadow: inset 0 0 0 1.5px var(--green-dark), 0 8px 20px -10px rgba(18, 63, 37, .4); }
+
+/* small labels: magazine kicker instead of a pill; .gold is a little price-tag label */
+.eyebrow { background: none; padding: 0; border-radius: 0; margin-bottom: 14px; color: var(--green);
+  font: 700 .78rem/1 "Inter", sans-serif; letter-spacing: .14em; }
+.eyebrow.gold { background: var(--gold); color: var(--green-dark); padding: 6px 10px; border-radius: 6px; letter-spacing: .1em; }
+.chip { background: var(--green-soft); color: var(--green-dark); border-radius: 8px; }
+
+/* footer */
+.site-footer { background: #17140f; }
+.site-footer .brandline { font-family: var(--serif); font-weight: 700; font-size: 1.2rem; }
+
+/* type roles: headlines serif, buttons and labels sans, prices and counters mono */
+h1 .hl, h2 .hl, .page-intro h1 .hl, .rb h1 .hl, .hero h1 .hl { background: none; padding: 0; font-style: italic; font-weight: 600; color: var(--green); }
+.rb-go, .rb-open-go, .rb-tick span { font-family: "Inter", sans-serif; font-weight: 700; }
+.rb-go { background: var(--green-dark); border-radius: 12px; }
+.rb-how li::before, .rb-steps button::before { font: 500 .9rem var(--mono); }
+.rb-facts b, .rb-total, .rb-spend { font-family: var(--mono); font-weight: 500; }
+.rb-spend { color: var(--green-dark); }
+
+/* the newsletter box (newsletter.js builds it with inline styles), as a paper card everywhere */
+.nl-box > div { max-width: 640px !important; padding: clamp(24px, 4vw, 36px) !important; background: #fff !important;
+  color: var(--ink) !important; border: 1px solid var(--line); border-radius: 22px !important; box-shadow: var(--shadow); }
+.nl-box > div > div:first-child { background: var(--gold) !important; border-radius: 6px !important; }
+.nl-box h2 { color: var(--green-dark) !important; font-family: var(--serif) !important; }
+.nl-box p { opacity: 1 !important; color: var(--ink-2); }
+.nl-box input { border: 1.5px solid var(--line) !important; border-radius: 12px !important; background: var(--paper); }
+.nl-box button, .nl-box a[download] { border-radius: 12px !important; background: var(--green-dark) !important; color: #fff !important;
+  font-family: "Inter", sans-serif !important; }
+.nl-box a:not([download]) { color: var(--green) !important; }
+.nl-box p:last-child { color: var(--muted); }
