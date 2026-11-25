@@ -6,7 +6,7 @@
 <meta name="p:domain_verify" content="c75533f06081d9b4c110a67a1e15fe76"/>
 <meta name='impact-site-verification' value='0a3f7548-fe10-43ee-9659-e0b50de8dd98'>
 <title>Budget Bite Club | Restaurant food for $5 or less</title>
-<meta name="description" content="A new 60-second recipe every day: restaurant-style food for $5 or less, honest price estimates, real ingredients, dinner in about 20 minutes.">
+<meta name="description" content="A new 60-second recipe every day: restaurant-style food for $5 or less, honest price estimates, real ingredients, dinner in about 20 minutes. Plus a free $5 Recipe Builder and Weekly Meal Planner.">
 <meta property="og:title" content="Budget Bite Club">
 <meta property="og:description" content="Restaurant food for $5 or less. A new recipe every day.">
 <meta property="og:image" content="https://budgetbiteclub-boop.github.io/img/share.jpg">
@@ -18,230 +18,221 @@
 <link rel="manifest" href="/manifest.webmanifest"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Bite Club"><meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<meta name="theme-color" content="#fffaf0">
+<link rel="stylesheet" href="home.css">
+<meta name="theme-color" content="#fbf6ec">
 </head>
-<body>
+<body class="home">
 <a class="skip" href="#main">Skip to content</a>
 
 <!-- Reusable icons -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-yt" viewBox="0 0 24 24"><rect x="1.5" y="4.5" width="21" height="15" rx="4.5" fill="currentColor"/><path d="M10 8.8v6.4l5.6-3.2z" fill="#ff0033"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><rect x="1.5" y="4.5" width="21" height="15" rx="4.5" fill="currentColor"/><path d="M10 8.8v6.4l5.6-3.2z" fill="#fff"/></symbol>
   <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></symbol>
   <symbol id="i-tt" viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 2h-3.4v13.1a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V8.8a6.4 6.4 0 1 0 5.4 6.3V8.6a8 8 0 0 0 4.4 1.3V6.5a4.5 4.5 0 0 1-4.4-4.5z"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5 12 13l8.5-6.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
 </svg>
 
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="#top"><img src="profile.png" alt="" width="40" height="40">Budget Bite Club</a>
     <nav class="nav" aria-label="Main">
+      <a href="recipes.html">Recipes</a>
       <a href="recipe-builder.html">Recipe Builder</a>
       <a href="planner.html">Meal Planner</a>
-      <a href="recipes.html">Recipe Feed</a>
-      <a href="#week">The Week</a>
       <a href="kit.html">Kitchen Gear</a>
       <a href="links.html">Links</a>
     </nav>
-    <a class="btn btn-green btn-sm" href="#follow">Join the Club</a>
+    <a class="btn btn-green btn-sm" href="#join">Join the Club</a>
   </div>
 </header>
 
 <main id="top"><span id="main"></span>
-  <!-- HERO -->
-  <section class="hero">
+
+  <!-- HERO: one message, two clear next steps -->
+  <section class="h-hero">
     <div class="wrap">
-      <div>
-        <span class="eyebrow">New recipe every day</span>
-        <h1>Restaurant food for <span class="hl">$5 or less.</span></h1>
-        <p class="lead">One-minute recipes with honest price estimates, real ingredients and dinner on the table in about 20 minutes.</p>
-        <div class="btn-row">
-          <a class="btn btn-tt" href="https://www.tiktok.com/@budgetbiteclub" target="_blank" rel="noopener"><svg><use href="#i-tt"/></svg>TikTok</a>
-          <a class="btn btn-yt" href="https://www.youtube.com/@Budget_Bite_Club" target="_blank" rel="noopener"><svg style="color:#fff"><use href="#i-yt"/></svg>YouTube</a>
-          <a class="btn btn-ig" href="https://www.instagram.com/budget_biteclub/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Instagram</a>
+      <div class="h-hero-copy">
+        <p class="kicker">A new $5 recipe every day at 6&nbsp;PM</p>
+        <h1>Restaurant food at <em>grocery-store</em> prices.</h1>
+        <p class="lead">One-minute recipe videos with honest price estimates, real ingredients and dinner on the table in about 20 minutes.</p>
+        <div class="h-ctas">
+          <a class="h-btn primary" href="recipe-builder.html">Make a $5 recipe <svg><use href="#i-arrow"/></svg></a>
+          <a class="h-btn ghost" href="planner.html">Plan my week</a>
         </div>
-        <ul class="quick-links" aria-label="Quick links"><li><a href="recipes.html">All recipes</a></li><li><a href="recipe-builder.html">$5 Recipe Builder</a></li><li><a href="planner.html">Weekly Meal Planner</a></li><li><a href="kit.html">Kitchen gear</a></li><li><a href="links.html">All links</a></li></ul>
+        <p class="h-follow">Watch on
+          <a href="https://www.tiktok.com/@budgetbiteclub" target="_blank" rel="noopener" aria-label="TikTok"><svg><use href="#i-tt"/></svg>TikTok</a>
+          <a href="https://www.youtube.com/@Budget_Bite_Club" target="_blank" rel="noopener" aria-label="YouTube"><svg><use href="#i-yt"/></svg>YouTube</a>
+          <a href="https://www.instagram.com/budget_biteclub/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg>Instagram</a>
+        </p>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <img src="img/rigatoni-pans.jpg" alt="" width="540" height="960" fetchpriority="high" decoding="async">
-        <img src="img/cream-swirl.jpg" alt="" width="540" height="960" fetchpriority="high" decoding="async">
-        <div class="price-badge"><small>vs $34 at a restaurant</small>$4.94*</div>
-      </div>
+      <a class="h-hero-art" id="hero-art" href="recipes.html">
+        <img id="hero-img" src="img/rigatoni-pans.jpg" alt="Spicy rigatoni alla vodka in two pans" width="540" height="960" fetchpriority="high" decoding="async">
+        <span class="tag" aria-hidden="true">
+          <span class="tag-k" id="hero-k">vs $34 out</span>
+          <span class="tag-p" id="hero-p">$4.94*</span>
+        </span>
+        <span class="h-cap" id="hero-cap"><small>Latest recipe</small>Budget Spicy Rigatoni alla Vodka</span>
+      </a>
     </div>
   </section>
+
+  <!-- PROOF -->
+  <div class="h-proof">
+    <div class="wrap">
+      <div><b>$5 or less*</b><span>per recipe, priced as we cook</span></div>
+      <div><b>About 20 min</b><span>from start to plate</span></div>
+      <div><b>Daily at 6 PM</b><span>Eastern, on every app</span></div>
+    </div>
+  </div>
 
   <!-- THE TWO FREE TOOLS share the spotlight. Both examples are real results (Nov 24, 2026): the Recipe Builder's
        carbonara (share link ?r=CVBt2GD4V) and a Meal Planner plan (have: rice, eggs, pasta, an onion; 5 dinners
        for 2; dinner costs are amounts used). Both photos are AI-generated. -->
-  <section class="promo" id="builder" aria-label="Free tools">
+  <section class="h-tools" id="tools" aria-labelledby="tools-h">
     <div class="wrap">
-      <div class="promo-head">
-        <span class="eyebrow">Free tools</span>
-        <h2>Dinner, <span class="hl">figured out.</span></h2>
-        <p>One recipe from what's in your fridge, or a whole week of $5 dinners with one shopping list.</p>
-      </div>
-      <div class="tools">
-        <div class="panel">
-          <span class="eyebrow gold">Recipe Builder &middot; 5 free a day</span>
-          <h3>Random stuff in the fridge? <span class="hl">Make it a $5 dinner.</span></h3>
-          <p>Type what you have and get a recipe in seconds, with estimated prices, a shopping list and simple steps.</p>
-          <a class="demo" href="recipe-builder.html?r=CVBt2GD4V" aria-label="See a real example: Parmesan Bacon Carbonara for Two, about $4.79">
-            <img src="img/builder-carbonara.jpg" alt="" width="1024" height="768" loading="eager" decoding="async">
-            <div class="demo-body">
-              <div class="q">Someone typed</div>
-              <div class="in">pasta, bacon, eggs, parmesan</div>
-              <div class="out"><b>Parmesan Bacon Carbonara for Two</b><span>Serves 2 &middot; 25 min &middot; about $4.79*</span></div>
-              <div class="see">See the full recipe &rarr;</div>
-            </div>
-          </a>
-          <a class="btn btn-gold btn-lg" href="recipe-builder.html">Try the Recipe Builder &rarr;</a>
-        </div>
-        <div class="panel alt">
-          <span class="eyebrow gold">Meal Planner &middot; 2 free a day</span>
-          <h3>Plan a whole week of <span class="hl">$5 dinners.</span></h3>
-          <p>Dinners that share ingredients so nothing goes to waste, plus one shopping list sorted by aisle for your store.</p>
-          <a class="demo" href="planner.html" aria-label="Plan your week: a real example of 5 dinners for 2, each under $5">
-            <img src="img/planner-week.jpg" alt="" width="1024" height="768" loading="eager" decoding="async">
-            <div class="demo-body">
-              <div class="q">Someone asked for 5 dinners for 2</div>
-              <ul class="week-list">
-                <li>Chicken and Veggie Fried Rice <span>$4.86*</span></li>
-                <li>Easy Spaghetti with Meat Sauce <span>$4.76*</span></li>
-                <li>Cheesy Tuna and Pea Pasta <span>$4.49*</span></li>
-                <li>Oven Drumsticks with Roast Potatoes <span>$4.46*</span></li>
-                <li>Cheesy Potato and Pea Frittata <span>$3.94*</span></li>
+      <header class="h-head">
+        <p class="kicker">Free tools</p>
+        <h2 id="tools-h">Dinner, figured out.</h2>
+        <p>One recipe from what's in your fridge, or a whole week of $5 dinners on one shopping list.</p>
+      </header>
+      <div class="h-tool-grid">
+        <article class="h-tool">
+          <a class="h-tool-img" href="recipe-builder.html?r=CVBt2GD4V" tabindex="-1" aria-hidden="true"><img src="img/builder-carbonara.jpg" alt="" width="1024" height="768" loading="lazy" decoding="async"></a>
+          <div class="h-tool-body">
+            <p class="label"><span>01</span>Recipe Builder</p>
+            <h3>Random stuff in the fridge? Make it a $5 dinner.</h3>
+            <p>Type what you have. Get a recipe in seconds with estimated prices, a shopping list and simple steps.</p>
+            <div class="mock" aria-label="Example: someone typed pasta, bacon, eggs and parmesan and got Parmesan Bacon Carbonara for Two, about $4.79">
+              <div class="mock-in" aria-hidden="true">pasta, bacon, eggs, parmesan<i></i></div>
+              <a class="mock-out" href="recipe-builder.html?r=CVBt2GD4V">
+                <span><b>Parmesan Bacon Carbonara for Two</b><small>Serves 2 &middot; 25 min</small></span>
+                <span class="price">$4.79*</span>
+              </a>
+              <ul class="mock-feats">
+                <li>Shopping list</li>
+                <li>Simple steps</li>
+                <li>Shop it at your store</li>
+                <li>Email it to yourself</li>
               </ul>
-              <div class="see">One shopping list for all five &rarr;</div>
             </div>
-          </a>
-          <a class="btn btn-gold btn-lg" href="planner.html">Plan my week &rarr;</a>
+            <a class="h-btn primary block" href="recipe-builder.html">Try the Recipe Builder <svg><use href="#i-arrow"/></svg></a>
+            <p class="fine-note">5 free recipes a day</p>
+          </div>
+        </article>
+        <article class="h-tool">
+          <a class="h-tool-img" href="planner.html" tabindex="-1" aria-hidden="true"><img src="img/planner-week.jpg" alt="" width="1024" height="768" loading="lazy" decoding="async"></a>
+          <div class="h-tool-body">
+            <p class="label"><span>02</span>Weekly Meal Planner</p>
+            <h3>A whole week of $5 dinners, one shopping trip.</h3>
+            <p>Dinners that share ingredients so nothing goes to waste, with one list sorted by aisle for your store.</p>
+            <div class="receipt" aria-label="Example plan: 5 dinners for 2, each under $5">
+              <p class="r-top">5 dinners for 2 &middot; example plan</p>
+              <ul>
+                <li><span>Chicken &amp; veggie fried rice</span><b>$4.86*</b></li>
+                <li><span>Spaghetti with meat sauce</span><b>$4.76*</b></li>
+                <li><span>Cheesy tuna &amp; pea pasta</span><b>$4.49*</b></li>
+                <li><span>Drumsticks &amp; roast potatoes</span><b>$4.46*</b></li>
+                <li><span>Potato &amp; pea frittata</span><b>$3.94*</b></li>
+              </ul>
+            </div>
+            <a class="h-btn primary block" href="planner.html">Plan my week <svg><use href="#i-arrow"/></svg></a>
+            <p class="fine-note">2 free plans a day</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST RECIPES (filled from recipes.json; the static cards are the fallback) -->
+  <section class="h-latest" id="recipe" aria-labelledby="latest-h">
+    <div class="wrap">
+      <header class="h-head row">
+        <div>
+          <p class="kicker">Fresh from the kitchen</p>
+          <h2 id="latest-h">This week's recipes</h2>
         </div>
+        <a class="h-link" href="recipes.html">See every recipe <svg><use href="#i-arrow"/></svg></a>
+      </header>
+      <div class="h-cards" id="cards">
+        <a class="h-card" href="recipes.html"><img src="img/bowls.jpg" alt="" loading="lazy"><span class="k">Pasta under $5</span><b>Budget Spicy Rigatoni alla Vodka</b><span class="m">about $4.94* &middot; 20 min</span></a>
+        <a class="h-card" href="recipes.html"><img src="img/sauce-spoon.jpg" alt="" loading="lazy"><span class="k">Pasta under $5</span><b>Rich tomato sauce, the cheap way</b><span class="m">Under $5*</span></a>
+        <a class="h-card" href="recipes.html"><img src="img/fork-twirl.jpg" alt="" loading="lazy"><span class="k">Pasta under $5</span><b>Weeknight pasta, restaurant style</b><span class="m">Under $5*</span></a>
       </div>
     </div>
   </section>
 
-  <!-- STATS -->
-  <div class="stats">
+  <!-- THE WEEK -->
+  <section class="h-week" id="week" aria-labelledby="week-h">
     <div class="wrap">
-      <div><b>$5</b><span>or less per recipe</span></div>
-      <div><b>~20 min</b><span>start to plate</span></div>
-      <div><b>Daily</b><span>new video at 6 PM</span></div>
-    </div>
-  </div>
-
-  <!-- WEEK -->
-  <section id="week">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>A different format every day</h2>
-        <p>Every week has a theme, and every day of the week has its own kind of video.</p>
+      <div class="h-week-intro">
+        <p class="kicker">The week</p>
+        <h2 id="week-h">A different kind of dinner every day.</h2>
+        <p>Every video is about 60 seconds, every dish is $5 or less, and a new one drops every day at 6&nbsp;PM Eastern.</p>
+        <a class="h-btn gold" href="#join">Never miss one <svg><use href="#i-arrow"/></svg></a>
       </div>
-      <div class="week">
-        <div class="day"><div class="d">Monday</div><h3>Mistake Monday</h3><p>The common mistake that ruins the dish, and the easy fix.</p></div>
-        <div class="day"><div class="d">Tuesday</div><h3>$5 vs $50</h3><p>A pricey restaurant favorite, made at home for a fraction.</p></div>
-        <div class="day"><div class="d">Wednesday</div><h3>Takeout Copycat</h3><p>Your delivery order, faster and cheaper from your own stove.</p></div>
-        <div class="day"><div class="d">Thursday</div><h3>Pantry Challenge</h3><p>Something great from staples you already have.</p></div>
-        <div class="day"><div class="d">Friday</div><h3>Fridge Raid Friday</h3><p>Three random things from your fridge become a $5 dinner. Comment yours!</p></div>
-        <div class="day"><div class="d">Saturday</div><h3>Rate This Hack</h3><p>We test a viral kitchen shortcut and give it an honest score.</p></div>
-        <div class="day"><div class="d">Sunday</div><h3>Speedrun</h3><p>A full dinner against the clock. Maximum speed, zero fuss.</p></div>
-      </div>
+      <ol class="h-days">
+        <li><span class="d">Mon</span><span><b>Mistake Monday</b>The common mistake that ruins the dish, and the easy fix.</span></li>
+        <li><span class="d">Tue</span><span><b>$5 vs $50</b>A pricey restaurant favourite, made at home for a fraction.</span></li>
+        <li><span class="d">Wed</span><span><b>Takeout Copycat</b>Your delivery order, faster and cheaper from your own stove.</span></li>
+        <li><span class="d">Thu</span><span><b>Pantry Challenge</b>Something great from staples you already have.</span></li>
+        <li class="hot"><span class="d">Fri</span><span><b>Fridge Raid Friday</b>Three random things from a fridge go into the Recipe Builder. Comment yours!</span></li>
+        <li><span class="d">Sat</span><span><b>Rate This Hack</b>We test a viral kitchen shortcut and give it an honest score.</span></li>
+        <li><span class="d">Sun</span><span><b>Speedrun</b>A full dinner against the clock. Maximum speed, zero fuss.</span></li>
+      </ol>
     </div>
   </section>
 
-  <!-- RECIPE SPOTLIGHT -->
-  <section id="recipe" class="spotlight">
+  <!-- JOIN: socials + newsletter -->
+  <section class="h-join" id="join" aria-labelledby="join-h">
     <div class="wrap">
-      <div class="section-head">
-        <h2>Fresh from the kitchen</h2>
-        <p>Latest recipe: <strong>Budget Spicy Rigatoni alla Vodka</strong>. The creamy, spicy classic that costs about $34 out, made at home for about $4.94.*</p>
+      <div class="h-join-copy">
+        <p class="kicker">Join the club</p>
+        <h2 id="join-h">Dinner ideas that respect your wallet.</h2>
+        <p>Follow along on your favourite app. Every price is an honest estimate, every tip explains why it works, and it's never the same dish twice.</p>
+        <ul class="h-socials">
+          <li><a href="https://www.tiktok.com/@budgetbiteclub" target="_blank" rel="noopener"><span class="ic tt"><svg><use href="#i-tt"/></svg></span><span><b>TikTok</b>@budgetbiteclub</span><em>Follow</em></a></li>
+          <li><a href="https://www.youtube.com/@Budget_Bite_Club" target="_blank" rel="noopener"><span class="ic yt"><svg><use href="#i-yt"/></svg></span><span><b>YouTube Shorts</b>@Budget_Bite_Club</span><em>Subscribe</em></a></li>
+          <li><a href="https://www.instagram.com/budget_biteclub/" target="_blank" rel="noopener"><span class="ic ig"><svg><use href="#i-ig"/></svg></span><span><b>Instagram Reels</b>@budget_biteclub</span><em>Follow</em></a></li>
+        </ul>
       </div>
-      <div class="gallery">
-        <img src="img/cream-swirl.jpg" alt="Cream swirling into tomato sauce" loading="lazy">
-        <img src="img/rigatoni-pans.jpg" alt="Two pans of spicy rigatoni from above" loading="lazy">
-        <img src="img/sauce-spoon.jpg" alt="Spoon of rich tomato sauce" loading="lazy">
-        <img src="img/chili-flakes.jpg" alt="Chili flakes falling into the pan" loading="lazy">
-        <img src="img/bowls.jpg" alt="Bowls of pasta ready to serve" loading="lazy">
-        <img src="img/fork-twirl.jpg" alt="Fork twirling pasta over a bowl" loading="lazy">
-      </div>
-      <div class="recipe-meta">
-        <span class="chip">💸 about $4.94 total*</span>
-        <span class="chip">⏱️ About 20 minutes</span>
-        <span class="chip">🍝 Pasta Under $5 week</span>
-      </div>
-      <div style="text-align:center;margin-top:26px">
-        <a class="btn btn-green" href="recipes.html">Scroll the full Recipe Feed &rarr;</a>
-      </div>
-    </div>
-  </section>
-  <script>
-  // Replace the static spotlight with the newest recipes from the feed, once there are some.
-  fetch("recipes.json", { cache: "no-cache" }).then(r => r.json()).then(feed => {
-    if (!feed.length) return;
-    const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-    const sec = document.getElementById("recipe");
-    sec.querySelector(".section-head p").innerHTML =
-      `Latest: <strong>${esc(feed[0].dish)}</strong>${feed[0].cost ? " for about " + esc(feed[0].cost) + "*" : ""}. Tap any recipe to see the photos, ingredients and steps.`;
-    sec.querySelector(".gallery").innerHTML = feed.slice(0, 6).map(r => `
-      <a href="recipes.html#${esc(r.id)}" style="position:relative;display:block;text-decoration:none">
-        <img src="${esc(r.images[0])}" alt="${esc(r.dish)}" loading="lazy">
-        <span style="position:absolute;left:8px;right:8px;bottom:8px;background:rgba(0,0,0,.62);color:#fff;border-radius:10px;padding:6px 10px;font:700 .85rem Inter,sans-serif">
-          ${esc(r.dish)}${r.cost ? " &middot; about " + esc(r.cost) + "*" : ""}</span>
-      </a>`).join("");
-    const chips = sec.querySelector(".recipe-meta");
-    if (chips) chips.innerHTML = `<span class="chip">🍳 ${feed.length} recipe${feed.length > 1 ? "s" : ""} and counting</span>`;
-  }).catch(() => {});
-  </script>
-
-  <!-- WHY -->
-  <section id="why">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Why join the club</h2>
-        <p>Cooking videos that respect your wallet and your time.</p>
-      </div>
-      <div class="why">
-        <div class="card"><div class="icon">🧾</div><h3>Honest price estimates</h3><p>Every video adds up roughly what it costs as you cook, so you know about what to budget before you shop. Your store's prices will vary.</p></div>
-        <div class="card"><div class="icon">💡</div><h3>Tips that explain why</h3><p>Not just steps. The reason each one works, so you get better at cooking, not just this recipe.</p></div>
-        <div class="card"><div class="icon">🔁</div><h3>Never boring</h3><p>Weekly themes and daily formats mean a new idea every day, never the same dish twice.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOLLOW -->
-  <section id="follow" class="follow">
-    <div class="wrap">
-      <h2>Join the Budget Bite Club</h2>
-      <p>A new recipe drops every day at 6 PM ET, right when you're deciding what's for dinner. Pick your favorite app and hit follow.</p>
-      <div class="socials">
-        <a class="social" href="https://www.tiktok.com/@budgetbiteclub" target="_blank" rel="noopener">
-          <span class="logo" style="background:var(--tt)"><svg><use href="#i-tt"/></svg></span>
-          <b>TikTok</b><span>@budgetbiteclub</span><em>Follow &rarr;</em>
-        </a>
-        <a class="social" href="https://www.youtube.com/@Budget_Bite_Club" target="_blank" rel="noopener">
-          <span class="logo" style="background:var(--yt)"><svg style="color:#fff"><use href="#i-yt"/></svg></span>
-          <b>YouTube Shorts</b><span>@Budget_Bite_Club</span><em>Subscribe &rarr;</em>
-        </a>
-        <a class="social" href="https://www.instagram.com/budget_biteclub/" target="_blank" rel="noopener">
-          <span class="logo" style="background:var(--ig)"><svg><use href="#i-ig"/></svg></span>
-          <b>Instagram Reels</b><span>@budget_biteclub</span><em>Follow &rarr;</em>
-        </a>
-      </div>
-      <div class="nl-box" id="newsletter"></div>
+      <div class="h-join-nl"><div class="nl-box" id="newsletter"></div></div>
     </div>
   </section>
 
   <!-- BUSINESS -->
-  <section class="business">
+  <section class="h-biz">
     <div class="wrap">
-      <div class="box">
-        <h2 style="color:var(--green-dark)">Brands &amp; partnerships</h2>
-        <p style="color:var(--muted);margin-top:0">Kitchen gear, grocery and food brands: let's make something delicious together.</p>
-        <a class="btn btn-green" href="mailto:clipped1919@gmail.com?subject=Partnership%20with%20Budget%20Bite%20Club"><svg><use href="#i-mail"/></svg>clipped1919@gmail.com</a>
-      </div>
+      <p><b>Brands &amp; partnerships.</b> Kitchen gear, grocery and food brands: let's make something delicious together.</p>
+      <a class="h-link" href="mailto:clipped1919@gmail.com?subject=Partnership%20with%20Budget%20Bite%20Club"><svg><use href="#i-mail"/></svg>clipped1919@gmail.com</a>
     </div>
   </section>
 </main>
+
+<script>
+// Fill the hero and the recipe cards with the newest recipes from the feed (the static content is the fallback).
+fetch("recipes.json", { cache: "no-cache" }).then(r => r.json()).then(feed => {
+  if (!feed.length) return;
+  const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const name = d => String(d).replace(/\s*\([^)]*\)\s*$/, "").replace(/:\s.*$/, "");
+  const r0 = feed[0], today = new Date().toLocaleDateString("en-CA", { timeZone: "America/Toronto" });
+  document.getElementById("hero-img").src = r0.images[0];
+  document.getElementById("hero-img").alt = name(r0.dish);
+  document.getElementById("hero-art").href = "recipes.html#" + encodeURIComponent(r0.id);
+  document.getElementById("hero-k").textContent = r0.date === today ? "Today's recipe" : "Latest recipe";
+  document.getElementById("hero-p").textContent = r0.cost ? r0.cost + "*" : "Under $5*";
+  document.getElementById("hero-cap").innerHTML = `<small>${esc(r0.format || "Latest recipe")}</small>${esc(name(r0.dish))}`;
+  document.getElementById("cards").innerHTML = feed.slice(1, 7).map(r => `
+    <a class="h-card" href="recipes.html#${esc(r.id)}">
+      <img src="${esc(r.images[0])}" alt="" loading="lazy">
+      <span class="k">${esc(r.format || "")}</span>
+      <b>${esc(name(r.dish))}</b>
+      <span class="m">${r.cost ? "about " + esc(r.cost) + "*" : "Under $5*"}${r.minutes ? " &middot; " + esc(r.minutes) + " min" : ""}</span>
+    </a>`).join("");
+}).catch(() => {});
+</script>
 <script src="newsletter.js" defer></script>
 
 <footer class="site-footer">
@@ -250,7 +241,7 @@
     <nav class="links" aria-label="Footer">
       <a href="recipes.html">Recipe Feed</a>
       <a href="recipe-builder.html">Recipe Builder</a>
-<a href="planner.html">Meal Planner</a>
+      <a href="planner.html">Meal Planner</a>
       <a href="kit.html">Kitchen Gear</a>
       <a href="links.html">Links</a>
       <a href="privacy.html">Privacy</a>
