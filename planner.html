@@ -39,12 +39,15 @@ try{var pan=localStorage.getItem(PANTRY);if(pan&&!ph.value)ph.value=pan;}catch(e
 function copy(text,btn){var done=function(){var o=btn.textContent;btn.textContent='Copied!';setTimeout(function(){btn.textContent=o;},1500);};
   if(navigator.clipboard)navigator.clipboard.writeText(text).then(done,function(){prompt('Copy your list:',text);});else prompt('Copy your list:',text);}
 var AISLES=['Produce','Meat & fish','Dairy & eggs','Bakery','Pantry','Frozen','Spices & sauces'];
+function pk(i){return Number(i.package_cost!=null?i.package_cost:i.cost)||0;}
 function render(p,saved){
   var card=el('article','rb-recipe pl-plan'),head=el('header','rb-head');
   head.appendChild(el('p','rb-kicker',saved?'Your saved plan':'Your $5 week'));var h=el('h2',null,p.title||'Your week of $5 dinners');h.tabIndex=-1;head.appendChild(h);
-  var n=p.dinners.length,serv=p.servings||'',facts=el('div','rb-facts');
-  [[String(n),n==1?'dinner':'dinners'],[money(p.total_cost)+'*','estimated total'],[money(p.total_cost/Math.max(n,1))+'*','per dinner'],
-   [serv?String(serv):'-',serv==1?'person each':'people each']].forEach(function(x){var d=el('div');d.appendChild(el('b',null,x[0]));d.appendChild(el('span',null,x[1]));facts.appendChild(d);});
+  // Nov 24 (owner): the headline is the projected checkout total for the whole packages to buy, not a per-serving
+  // or per-dinner figure. package_cost = shelf price of the package(s) needed; older saved plans fall back to cost.
+  var n=p.dinners.length,serv=p.servings||'',facts=el('div','rb-facts'),basket=el('b');
+  [[String(n),n==1?'dinner':'dinners'],[basket,'estimated basket total'],
+   [serv?String(serv):'-',serv==1?'person each':'people each']].forEach(function(x){var d=el('div');d.appendChild(typeof x[0]==='string'?el('b',null,x[0]):x[0]);d.appendChild(el('span',null,x[1]));facts.appendChild(d);});
   head.appendChild(facts);card.appendChild(head);
   var body=el('div','rb-body pl-body');
   // Dinners
@@ -68,7 +71,8 @@ function render(p,saved){
       function paint(){var have=st[k]==='have';pb.className='pill '+(have?'have':'buy');pb.textContent=have?'have it':'buy';
         pb.setAttribute('aria-pressed',have?'true':'false');li.classList.toggle('got',have);}
       pb.addEventListener('click',function(){st[k]=st[k]==='have'?'buy':'have';paint();update();remember();});
-      paint();nm.appendChild(pb);li.appendChild(nm);li.appendChild(el('span','pr',money(i.cost)));if(i.amount)li.appendChild(el('span','am',i.amount));ul.appendChild(li);});
+      paint();nm.appendChild(pb);li.appendChild(nm);li.appendChild(el('span','pr',money(pk(i))));
+      var am=[i.amount?'need '+i.amount:'',i.package?'buy '+i.package:''].filter(Boolean).join(' · ');if(am)li.appendChild(el('span','am',am));ul.appendChild(li);});
     s1.appendChild(ul);});
   var spend=el('div','rb-spend');s1.appendChild(spend);if(p.price_note)s1.appendChild(el('p','rb-note',p.price_note));
   var acts=el('div','pl-acts'),cb=el('button','btn btn-ghost btn-sm','Copy list');cb.type='button';
@@ -88,8 +92,8 @@ function render(p,saved){
   sul.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;if(!sent){sent=true;beacon('list');}beacon(a.classList.contains('rb-flipp')?'flyer':'find');});
   function buy(){return p.shopping.filter(function(i,k){return st[k]==='buy';});}
   function listText(){return 'Shopping list: '+(p.title||'my $5 week')+'\n'+buy().map(function(i){return '- '+(i.amount?i.amount+' ':'')+i.item;}).join('\n');}
-  function update(){var b=buy(),cost=b.reduce(function(a,i){return a+Number(i.cost||0);},0);spend.innerHTML='';
-    spend.appendChild(el('span',null,b.length?'You need to buy':'You have everything'));spend.appendChild(el('span',null,money(cost)+'*'));
+  function update(){var b=buy(),cost=b.reduce(function(a,i){return a+pk(i);},0);spend.innerHTML='';basket.textContent=money(cost)+'*';
+    spend.appendChild(el('span',null,b.length?'Estimated basket total':'You have everything'));spend.appendChild(el('span',null,money(cost)+'*'));
     var s=store();sul.innerHTML='';hint.textContent='Tap each item to see '+s.name+'’s real price and add it to your cart. Then check out on '+s.short+' and choose pickup or delivery.';
     b.forEach(function(i){var li=el('li'),a=el('a','rb-find',q(i));a.href=s.url+encodeURIComponent(q(i));a.target='_blank';a.rel='noopener';
       a.appendChild(el('span',null,'Find at '+s.short+' →'));var fl=el('a','rb-flipp','Flyer deals');fl.href=C.flipp+encodeURIComponent(q(i));fl.target='_blank';fl.rel='noopener';
