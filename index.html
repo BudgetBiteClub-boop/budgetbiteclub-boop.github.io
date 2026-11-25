@@ -38,8 +38,8 @@
     <a class="brand" href="#top"><img src="profile.png" alt="" width="40" height="40">Budget Bite Club</a>
     <nav class="nav" aria-label="Main">
       <a href="recipe-builder.html">Recipe Builder</a>
-      <a href="recipes.html">Recipe Feed</a>
       <a href="planner.html">Meal Planner</a>
+      <a href="recipes.html">Recipe Feed</a>
       <a href="#week">The Week</a>
       <a href="kit.html">Kitchen Gear</a>
       <a href="links.html">Links</a>
@@ -71,31 +71,52 @@
     </div>
   </section>
 
-  <!-- RECIPE BUILDER: the centrepiece. The example is a real Recipe Builder result (made Nov 24, 2026, share
-       link ?r=CVBt2GD4V); the photo is AI-generated. -->
-  <section class="promo" id="builder" aria-labelledby="promo-h">
+  <!-- THE TWO FREE TOOLS share the spotlight. Both examples are real results (Nov 24, 2026): the Recipe Builder's
+       carbonara (share link ?r=CVBt2GD4V) and a Meal Planner plan (have: rice, eggs, pasta, an onion; 5 dinners
+       for 2; dinner costs are amounts used). Both photos are AI-generated. -->
+  <section class="promo" id="builder" aria-label="Free tools">
     <div class="wrap">
-      <div class="panel">
-        <div>
-          <span class="eyebrow gold">Free &middot; 5 recipes a day</span>
-          <h2 id="promo-h">Got random stuff in the fridge? <span class="hl">Make it a $5 dinner.</span></h2>
-          <p>Type what you have and the $5 Recipe Builder writes you a recipe in seconds, with estimated prices, a shopping list and simple steps.</p>
-          <ol class="how">
-            <li><b>1</b>Type your ingredients</li>
-            <li><b>2</b>Get a $5 recipe</li>
-            <li><b>3</b>Shop the list or email it to yourself</li>
-          </ol>
-          <a class="btn btn-gold btn-lg" href="recipe-builder.html">Try the Recipe Builder free &rarr;</a>
+      <div class="promo-head">
+        <span class="eyebrow">Free tools</span>
+        <h2>Dinner, <span class="hl">figured out.</span></h2>
+        <p>One recipe from what's in your fridge, or a whole week of $5 dinners with one shopping list.</p>
+      </div>
+      <div class="tools">
+        <div class="panel">
+          <span class="eyebrow gold">Recipe Builder &middot; 5 free a day</span>
+          <h3>Random stuff in the fridge? <span class="hl">Make it a $5 dinner.</span></h3>
+          <p>Type what you have and get a recipe in seconds, with estimated prices, a shopping list and simple steps.</p>
+          <a class="demo" href="recipe-builder.html?r=CVBt2GD4V" aria-label="See a real example: Parmesan Bacon Carbonara for Two, about $4.79">
+            <img src="img/builder-carbonara.jpg" alt="" width="1024" height="768" loading="eager" decoding="async">
+            <div class="demo-body">
+              <div class="q">Someone typed</div>
+              <div class="in">pasta, bacon, eggs, parmesan</div>
+              <div class="out"><b>Parmesan Bacon Carbonara for Two</b><span>Serves 2 &middot; 25 min &middot; about $4.79*</span></div>
+              <div class="see">See the full recipe &rarr;</div>
+            </div>
+          </a>
+          <a class="btn btn-gold btn-lg" href="recipe-builder.html">Try the Recipe Builder &rarr;</a>
         </div>
-        <a class="demo" href="recipe-builder.html?r=CVBt2GD4V" aria-label="See a real example: Parmesan Bacon Carbonara for Two, about $4.79">
-          <img src="img/builder-carbonara.jpg" alt="" width="1024" height="768" loading="eager" decoding="async">
-          <div class="demo-body">
-            <div class="q">Someone typed</div>
-            <div class="in">pasta, bacon, eggs, parmesan</div>
-            <div class="out"><b>Parmesan Bacon Carbonara for Two</b><span>Serves 2 &middot; 25 min &middot; about $4.79*</span></div>
-            <div class="see">See the full recipe &rarr;</div>
-          </div>
-        </a>
+        <div class="panel alt">
+          <span class="eyebrow gold">Meal Planner &middot; 2 free a day</span>
+          <h3>Plan a whole week of <span class="hl">$5 dinners.</span></h3>
+          <p>Dinners that share ingredients so nothing goes to waste, plus one shopping list sorted by aisle for your store.</p>
+          <a class="demo" href="planner.html" aria-label="Plan your week: a real example of 5 dinners for 2, each under $5">
+            <img src="img/planner-week.jpg" alt="" width="1024" height="768" loading="eager" decoding="async">
+            <div class="demo-body">
+              <div class="q">Someone asked for 5 dinners for 2</div>
+              <ul class="week-list">
+                <li>Chicken and Veggie Fried Rice <span>$4.86*</span></li>
+                <li>Easy Spaghetti with Meat Sauce <span>$4.76*</span></li>
+                <li>Cheesy Tuna and Pea Pasta <span>$4.49*</span></li>
+                <li>Oven Drumsticks with Roast Potatoes <span>$4.46*</span></li>
+                <li>Cheesy Potato and Pea Frittata <span>$3.94*</span></li>
+              </ul>
+              <div class="see">One shopping list for all five &rarr;</div>
+            </div>
+          </a>
+          <a class="btn btn-gold btn-lg" href="planner.html">Plan my week &rarr;</a>
+        </div>
       </div>
     </div>
   </section>
