@@ -1,5 +1,92 @@
 [
   {
+    "id": "2026-11-26",
+    "date": "2026-11-26",
+    "dish": "No-Mixer Pumpkin Pie Bars (One Bowl, One Can, Pantry Crust)",
+    "format": "Pantry Challenge",
+    "theme": "Friendsgiving & Holiday Sides for $5",
+    "hook": "$15 OR $4.72?",
+    "cost": "$4.72",
+    "servings": 9,
+    "minutes": 60,
+    "caption": "A $15 bakery pumpkin pie or $4.72 at home? These No-Mixer Pumpkin Pie Bars come out to $0.52 a bar.\nOne bowl, one can of pumpkin, a fork and a whisk. No mixer needed. 9 clean Friendsgiving squares in 60 minutes.\nIngredients: 1 cup flour, 3 tbsp + 1/2 cup sugar, 1/4 tsp salt, 6 tbsp melted butter, 1 cup canned pumpkin purée, 2 eggs, 1/2 cup milk, 2 tsp cinnamon, 1/2 tsp ginger, 1/4 tsp nutmeg",
+    "hashtags": [
+      "pumpkinpie",
+      "pumpkinpiebars",
+      "friendsgiving",
+      "thanksgivingdessert",
+      "budgetbaking",
+      "cheaprecipes",
+      "pantrychallenge",
+      "easydessert",
+      "fallbaking",
+      "onebowlrecipe"
+    ],
+    "ingredients": [
+      "1 cup (125 g) all-purpose flour",
+      "3 tbsp (38 g) white sugar, for the crust",
+      "1/4 tsp salt, divided",
+      "6 tbsp (85 g) butter, melted",
+      "1 cup (240 g) pure canned pumpkin purée (not pie filling), from a 398 mL can",
+      "2 large eggs",
+      "1/2 cup (100 g) white sugar, for the filling",
+      "1/2 cup (125 mL) milk",
+      "2 tsp ground cinnamon",
+      "1/2 tsp ground ginger",
+      "1/4 tsp ground nutmeg"
+    ],
+    "steps": [
+      "Heat the oven to 375°F (190°C). Line an 8x8-inch metal pan with parchment, leaving the ends hanging over the sides as handles.",
+      "Crust: in a bowl, stir the flour, 3 tbsp sugar and a pinch of salt with a fork. Pour in the melted butter and stir until it looks like damp sand. Press it firmly and evenly into the pan with the bottom of a measuring cup. Bake 10 minutes, until the edges are pale gold.",
+      "While the crust bakes, make the filling in the same bowl (no need to wash it). Whisk the pumpkin, eggs, 1/2 cup sugar, milk, cinnamon, ginger, nutmeg and the remaining salt by hand for about 1 minute, until smooth.",
+      "Lower the oven to 350°F (175°C). Pour the filling over the hot crust and smooth it out. Bake 18-22 minutes, until the edges are set and the center still wobbles slightly when you nudge the pan, like set jelly. The center should read 175°F (80°C) if you have a thermometer.",
+      "Cool the bars on a rack for 10 minutes. Then move the metal pan to the freezer for 10 minutes to firm up. Don't put a glass dish straight into the freezer.",
+      "Lift the bars out by the parchment and cut into 9 squares, wiping the knife between cuts. Refrigerate leftovers, covered, for up to 3 days."
+    ],
+    "images": [
+      "recipes/2026-11-26/1.jpg",
+      "recipes/2026-11-26/2.jpg",
+      "recipes/2026-11-26/3.jpg",
+      "recipes/2026-11-26/4.jpg",
+      "recipes/2026-11-26/5.jpg"
+    ],
+    "youtube": "https://youtube.com/shorts/icFcb4lXx6k",
+    "gear": [
+      {
+        "key": "mixing_bowls",
+        "name": "KitchenAid nesting mixing bowls",
+        "url": "https://www.amazon.ca/dp/B0C3MXN4VD?tag=bbcwebsite-20"
+      },
+      {
+        "key": "whisk",
+        "name": "Stainless steel whisks, 8 and 10 inch",
+        "url": "https://www.amazon.ca/dp/B0DRVSH3JP?tag=bbcwebsite-20"
+      },
+      {
+        "key": "measuring",
+        "name": "Measuring cups and spoons set",
+        "url": "https://www.amazon.ca/dp/B09SG1M7R2?tag=bbcwebsite-20"
+      },
+      {
+        "key": "thermometer",
+        "name": "Instant-read meat thermometer",
+        "url": "https://www.amazon.ca/dp/B0F6F4W5JW?tag=bbcwebsite-20"
+      },
+      {
+        "key": "chef_knife",
+        "name": "Cuisinart 8-inch chef's knife",
+        "url": "https://www.amazon.ca/dp/B0D5ST1BD2?tag=bbcwebsite-20"
+      },
+      {
+        "key": "cutting_board",
+        "name": "Farberware bamboo cutting board",
+        "url": "https://www.amazon.ca/dp/B0002TU482?tag=bbcwebsite-20"
+      }
+    ],
+    "published_at": "2026-11-26T18:05:12-05:00",
+    "pin_dates": {}
+  },
+  {
     "id": "2026-11-25",
     "date": "2026-11-25",
     "dish": "Rotisserie-Style Skillet Chicken Thighs: Mini Thanksgiving Dinner for 2 (with Butter-Crisped Potatoes, Glazed Carrots and Pan Gravy)",
@@ -254,7 +341,9 @@
       }
     ],
     "published_at": "2026-11-23T18:10:25-05:00",
-    "pin_dates": {}
+    "pin_dates": {
+      "2": "2026-11-26T18:05:27-05:00"
+    }
   },
   {
     "id": "2026-11-22",
@@ -430,7 +519,8 @@
     ],
     "published_at": "2026-11-21T18:06:03-05:00",
     "pin_dates": {
-      "2": "2026-11-23T18:10:29-05:00"
+      "2": "2026-11-23T18:10:29-05:00",
+      "3": "2026-11-26T18:05:27-05:00"
     }
   },
   {
