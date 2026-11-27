@@ -371,6 +371,9 @@ section { padding: 72px 0; }
 .rb-go { width: 100%; justify-content: center; margin-top: 14px; padding: 15px 20px; font: 800 1.05rem var(--serif); background: var(--green); }
 .rb-go:disabled { opacity: .7; cursor: progress; transform: none; box-shadow: none; }
 .rb-out { margin-top: 40px; scroll-margin-top: 90px; }
+/* Nov 27: on phones the sticky header is ~98px tall, so a form scrolled to "start" hid its own label and
+   the top of the text box (seen in Fridge Raid Friday's screen recording). */
+form, .rb-out { scroll-margin-top: 118px; }
 .rb-msg { border-radius: 14px; padding: 14px 16px; font-weight: 600; max-width: 720px; margin: 0 auto; }
 .rb-msg.err { background: #fde8e8; color: #7f1d1d; border: 1px solid #f5c2c2; }
 .rb-skel { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 26px; box-shadow: var(--shadow-sm); }
