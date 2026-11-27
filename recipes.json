@@ -1,5 +1,97 @@
 [
   {
+    "id": "2026-11-27",
+    "date": "2026-11-27",
+    "dish": "Takeout-Style Egg Fried Rice with Peas and Onion",
+    "format": "Fridge Raid Friday",
+    "theme": "Friendsgiving & Holiday Sides for $5",
+    "hook": "TAKEOUT EGG FRIED RICE",
+    "cost": "$3.94",
+    "servings": 2,
+    "minutes": 20,
+    "caption": "Leftover rice, 3 eggs, frozen peas and half an onion became takeout-style egg fried rice, $1.97 a serving.\nThe trick: soy sauce on the hot edge of the pan = glossy, never soggy. 20 minutes, $3.94 for 2.\n\nIngredients: 3 cups cold cooked white rice, 3 eggs, 1/2 cup frozen peas, 1/2 onion, 2 tbsp vegetable oil, 2 tbsp soy sauce, 2 garlic cloves, 2 green onions, 1 tsp toasted sesame oil, salt and pepper.",
+    "hashtags": [
+      "eggfriedrice",
+      "friedrice",
+      "leftoverrice",
+      "fridgeraidfriday",
+      "takeoutathome",
+      "copycatrecipe",
+      "budgetmeals",
+      "cheapeats",
+      "easydinner",
+      "leftoverrecipes"
+    ],
+    "ingredients": [
+      "3 cups cooked (about 190 g dry) Leftover cooked white rice, cold",
+      "3 large Eggs",
+      "1/2 cup (about 75 g) Frozen peas",
+      "1/2 medium (about 75 g), diced Onion",
+      "2 tbsp Vegetable oil",
+      "2 tbsp Soy sauce",
+      "2 cloves, minced Garlic",
+      "2 stalks, sliced Green onions",
+      "1 tsp Toasted sesame oil",
+      "to taste Salt and black pepper"
+    ],
+    "steps": [
+      "Break up the cold rice with your fingers or a fork so there are no big clumps. Set it aside.",
+      "Dice the half onion, mince the garlic, and slice the green onions, keeping the white and green parts separate.",
+      "Crack the 3 eggs into a bowl, add a pinch of salt, and beat with a fork until smooth.",
+      "Heat 1 tbsp oil in a wok or large nonstick pan over medium-high heat. Pour in the eggs and stir gently until just set and no longer runny, about 1 minute.",
+      "Move the eggs to a plate and wipe the pan if needed.",
+      "Add the remaining 1 tbsp oil. Cook the onion and green onion whites for 2 to 3 minutes until softened.",
+      "Add the garlic and stir for 30 seconds until fragrant.",
+      "Add the rice and spread it out. Let it sit 1 minute to crisp, then stir and repeat for about 4 minutes.",
+      "Stir in the frozen peas and cook 2 minutes until hot.",
+      "Drizzle the soy sauce around the edge of the pan and toss everything to coat.",
+      "Return the eggs, breaking them into pieces, and toss until the rice is steaming hot all the way through.",
+      "Turn off the heat, stir in the sesame oil and green onion tops, and season with pepper. Serve right away."
+    ],
+    "images": [
+      "recipes/2026-11-27/1.jpg",
+      "recipes/2026-11-27/2.jpg",
+      "recipes/2026-11-27/3.jpg",
+      "recipes/2026-11-27/4.jpg",
+      "recipes/2026-11-27/5.jpg"
+    ],
+    "youtube": null,
+    "gear": [
+      {
+        "key": "wok",
+        "name": "Souped Up Recipes carbon steel wok",
+        "url": "https://www.amazon.ca/dp/B0F2FP917T?tag=bbcwebsite-20"
+      },
+      {
+        "key": "chef_knife",
+        "name": "Cuisinart 8-inch chef's knife",
+        "url": "https://www.amazon.ca/dp/B0D5ST1BD2?tag=bbcwebsite-20"
+      },
+      {
+        "key": "cutting_board",
+        "name": "Farberware bamboo cutting board",
+        "url": "https://www.amazon.ca/dp/B0002TU482?tag=bbcwebsite-20"
+      },
+      {
+        "key": "mixing_bowls",
+        "name": "KitchenAid nesting mixing bowls",
+        "url": "https://www.amazon.ca/dp/B0C3MXN4VD?tag=bbcwebsite-20"
+      },
+      {
+        "key": "wooden_spoon",
+        "name": "Wooden cooking utensil set",
+        "url": "https://www.amazon.ca/dp/B0BYZDBPGL?tag=bbcwebsite-20"
+      },
+      {
+        "key": "measuring",
+        "name": "Measuring cups and spoons set",
+        "url": "https://www.amazon.ca/dp/B09SG1M7R2?tag=bbcwebsite-20"
+      }
+    ],
+    "published_at": "2026-11-27T18:05:25-05:00",
+    "pin_dates": {}
+  },
+  {
     "id": "2026-11-26",
     "date": "2026-11-26",
     "dish": "No-Mixer Pumpkin Pie Bars (One Bowl, One Can, Pantry Crust)",
@@ -170,7 +262,9 @@
       }
     ],
     "published_at": "2026-11-25T18:05:11-05:00",
-    "pin_dates": {}
+    "pin_dates": {
+      "2": "2026-11-27T18:05:44-05:00"
+    }
   },
   {
     "id": "2026-11-24",
@@ -258,7 +352,9 @@
       }
     ],
     "published_at": "2026-11-24T18:40:10-05:00",
-    "pin_dates": {}
+    "pin_dates": {
+      "2": "2026-11-27T18:05:44-05:00"
+    }
   },
   {
     "id": "2026-11-23",
